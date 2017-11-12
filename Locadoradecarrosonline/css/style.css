@@ -1,0 +1,104 @@
+#cabecalho {
+  float: right;
+  width: 100%;
+  position: relative;
+  position: absolute;
+  z-index: 99;
+  top: 0; 
+}
+
+#cabecalho > .menu {
+  border-radius: 0px;
+  display: block;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 0;
+  background: #fff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  border: transparent;
+  width: auto;
+  height: auto;
+   }
+
+ #cabecalho > .menu ul  {
+    list-style: none; 
+    text-transform: uppercase;
+    position: absolute; 
+    z-index: 2;
+    top: 0px; 
+    left: 600px;
+}
+
+ #cabecalho > .menu li  {
+    display: inline-block;
+    background-color: rgba(215, 215, 215, 1 );
+    padding: 10px;
+}
+
+#cabecalho > .menu li:hover  {
+    background-color:rgba(215, 215, 215, 0.5);
+    transition: 1s;
+}
+
+#cabecalho > .menu a  {
+    color: black; 
+    text-decoration: none;
+}
+
+#cabecalho > .menu li a {
+  text-transform: uppercase;
+  color: #000;
+  font-weight: normal;
+  font-family: "Montserrat", arial, sans-serif; 
+}
+
+#cabecalho > .menu li a > span .border {
+  display: block;
+  height: 3px;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-duration: 0.3s; 
+}
+
+#cabecalho > .menu li a > span .border:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FBB040;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out; 
+}
+
+#cabecalho > .menu li a:hover, #cabecalho > .menu li a:focus {
+  outline: none; 
+}
+
+#cabecalho > .menu li a:hover > span, #cabecalho > .menu li a:focus > span {
+  outline: none; 
+}
+
+#cabecalho > .menu li a:hover > span .border:before, #cabecalho > .menu li a:focus > span .border:before {
+  transform: scaleX(1); 
+}
+
+#cabecalho > .menu li.active a {
+  background: transparent; 
+}
+
+#cabecalho > .menu li.active a > span .border {
+  background: #FBB040; 
+}
