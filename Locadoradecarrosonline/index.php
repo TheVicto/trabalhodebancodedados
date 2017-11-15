@@ -1,177 +1,389 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"  href="css/style.css">
-<link rel="icon" type="img/jpg" href="imagens/ming.jpg">
-<title>Pagina Principal</title>
+<meta charset="utf-8">
+</ol>
 
-<style type="text/css">
+<!--Mudar para o normal-->
+ <link rel="stylesheet"  href="css/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-#slide{
-  
-  animation-name: muda;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-delay: 1s
+  <script src="https://use.fontawesome.com/bc520d82be.js"></script>
+    <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   <!-- Modernizr JS -->
+  <script src="js/modernizr-2.6.2.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-}
+<title>Locadora de Veículos</title>
 
-@keyframes muda {
-  
-    1%{background-image: url(imagens/car1.jpg);background-image: no-repeat;}
-   12.5%{background-image: url(imagens/car2.jpg);background-image: no-repeat;}
-   25%{background-image: url(imagens/car3.jpg);background-image: no-repeat;}
-   37.5%{background-image: url(imagens/car4.jpg);background-image: no-repeat;}
-   50%{background-image: url(imagens/car1.jpg);background-image: no-repeat;}
-   72.5%{background-image: url(imagens/car2.jpg);background-image: no-repeat;}
-   85%{background-image: url(imagens/car3.jpg);background-image: no-repeat;}
-   97.5%{background-image: url(imagens/car4.jpg);background-image: no-repeat;}
-}
-
-#cabecalho {
-  float: right;
-  width: 100%;
-  position: relative;
-  position: absolute;
-  z-index: 99;
-  top: 0; 
-}
-
-#cabecalho > .menu {
-  
-  display: block;
-  
-  margin-bottom: 0;
-  background: #fff;
-  box-shadow: 0 0 5pt 0 rgba(0, 0, 0, 0.1);
-  font-size: 8pt;
-  border: transparent;
-  width: auto;
-  height: auto;
-   }
-
- #cabecalho > .menu ul  {
-    list-style: none; 
-    text-transform: uppercase;
-    position: absolute; 
-    z-index: 2;
-    top: 0pt; 
-    left: 57%;
-}
-
- #cabecalho > .menu li  {
-    display: inline-block;
-    background-color: rgba(215, 215, 215, 1 );
-    padding: 8pt;
-}
-
-#cabecalho > .menu li:hover  {
-    background-color:rgba(215, 215, 215, 0.5);
-    transition: 1s;
-}
-
-#cabecalho > .menu a  {
-    color: black; 
-    text-decoration: none;
-}
-
-#cabecalho > .menu li a {
-  text-transform: uppercase;
-  color: #000;
-  font-weight: normal;
-  font-family: "Montserrat", arial, sans-serif; 
-}
-
-#cabecalho > .menu li a > span .border {
-  display: block;
-  height: 3pt;
-  vertical-align: middle;
-  transform: translateZ(0);
-  box-shadow: 0 0 1pt transparent;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  transition-property: color;
-  transition-duration: 0.3s;
-  transition-duration: 0.3s; 
-}
-
-#cabecalho > .menu li a > span .border:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #FBB040;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out; 
-}
-
-#cabecalho > .menu li a:hover, #cabecalho > .menu li a:focus {
-  outline: none; 
-}
-
-#cabecalho > .menu li a:hover > span, #cabecalho > .menu li a:focus > span {
-  outline: none; 
-}
-
-#cabecalho > .menu li a:hover > span .border:before, #cabecalho > .menu li a:focus > span .border:before {
-  transform: scaleX(1); 
-}
-
-#cabecalho > .menu li.active a {
-  background: transparent; 
-}
-
-#cabecalho > .menu li.active a > span .border {
-  background: #FBB040; 
-}
-
-
-#slide {
-  width: 450pt;
-  height: 400pt;
-  position: absolute; 
-  border: 8px solid white;
-  box-shadow: 1px 1px 4px;  
-  z-index: 1;
-  margin-top: 5%;
-  margin-left: 34%
+  <style>
+#logo{
+  margin-left: 10px;
+} 
+.container{
+  margin-top: 60px;
 }
 </style>
 
+
 </head>
-<script type="text/javascript">
-  function showPosition(position) {
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
+<body>
+  <hr>
+<header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header"> 
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                <!--<a class="navbar-brand" href="index.php"><img src="img/autocad.png" class="img-responsive"></a>-->
+            </div>
+            <div id="fh5co-navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
 
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_:KEY";
+                    <li class="active">
+                      <a href="index.php"><span>Principal<span class="border"></span></span>
+                      </a>
+                    </li>
 
-    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-}
-</script>
-<body >
-<header id="cabecalho">
-    <nav  class="menu">
-    	<ul>
-            <li><a href="https://www.adventurelog.com.br/index.php"><span>Principal <span class="border"></span></span></a></li>
-            <li><a href="https://www.adventurelog.com.br/index.php#empresa"><span>A Empresa <span class="border"></span></span></a></li>
-            <li><a href="https://www.adventurelog.com.br/index.php#servico"><span>Serviços<span class="border"></span></span></a></li>
-            <li><a href="https://www.adventurelog.com.br/index.php#frota"><span>Frota<span class="border"></span></span></a></li>
-            <li><a href="https://www.adventurelog.com.br/locacao.php"><span>Locação<span class="border"></span></span></a></li>
-            <li><a href="https://www.adventurelog.com.br/duvida.php"><span>Dúvidas<span class="border"></span></span></a></li>
-            <li><a href="https://www.adventurelog.com.br/contato.php"><span>Contato<span class="border"></span></span></a></li>
-        </ul>	
+                    <li>
+                      <a href="index.php#empresa">
+                        <span>A Empresa <span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="index.php#servico">
+                        <span>Serviços<span class="border"></span></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.php#frota">
+                        <span>Frota<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="locacao.php">
+                        <span>Locação<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="duvida.php">
+                        <span>Dúvidas<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="contato.php">
+                        <span>Contato<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#"><span style="color: #ff9900">
+                        <i class="glyphicon glyphicon-earphone"></i>
+                         </span> (88) 9940-7250   (21) 7819-0645</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
-<div id="slide">
+
+<div class="container" style="margin: center;">
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="img/neggocio.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="img/sw4.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="img/Hilux.jpg" alt="New york" style="width:100%;">
+      </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<hr>
+ <a name="empresa"></a>
+ <div class="row text-center">
+  <div class="col-md-8 col-md-offset-2">
+
+     <h2 class="fh5co-section-lead">A Empresa</h2>
+       <h3 class="fh5co-section-sub-lead">
+          <p style="text-align:justify;">
+
+            <p>A Empresa no presta serviços de locação de veículo em todo estado do Ceara e na Cidades do estado Rio Grande do Norte. Atua no seguimento,locação de veículo,transporte, vans, carro executivo e motoristas
+            </p>
+
+       </p>
+   </h3>
+  <hr>
+<p>
+          <iframe width="843" height="480" src="https://www.youtube.com/embed/cL9hr8caD9Y" frameborder="0" allowfullscreen></iframe>
+        </p>
+        </div>
+<hr>
+
+<div class="fh5co-spacer fh5co-spacer-md"></div>
   
+  <a name="servico"></a>
+   <div class="row text-center">
+      <div class="col-md-8 col-md-offset-2">
+        <hr>
+        <h2 class="fh5co-section-lead">Nossos Serviços</h2>
+      </div>
+
+         <div class="fh5co-spacer fh5co-spacer-md"></div>
+   </div>
+      
+       <div class="row">
+           <div class="col-md-6 col-sm-6">
+             <div class="fh5co-feature no-border">
+                 <div class="fh5co-feature-icon to-animate">
+
+                    <i class="icon-clock2"></i>
+       </div>
+                 <div class="access_time" id="glyphicon-time">
+                    <h4>Transporte viagens / eventos / city tour</h4>
+                       <p><p><span style="font-size:14px"><span style="color:#000000">“Viajar é sempre bom, mas tão importante quanto o lugar é como chegar lá...”. Nada melhor ...</p>
+                           <p><a href="#">Saiba mais</a></p>
+               </div>
+          </div>
+                      <div class="fh5co-feature no-border">
+                        <div class="fh5co-feature-icon to-animate">
+                           <i class="icon-bag"></i>
+                       </div>
+
+                      <div class="fh5co-feature-text">
+                         <h4>Transporte Executivo, Serviço à Disposição e Translado</h4>
+                          <p><p><span style="color:#000000"><span style="font-size:14px">Tranquilidade - Você não precisa se preocupar com as condições do trânsito e do tempo</p>
+                         <p><a href="#">Saiba mais</a></p>
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                    <div class="fh5co-feature no-border">
+                    <div class="fh5co-feature-icon to-animate">
+                    <i class="icon-user"></i>
+                    </div>
+
+                    <div class="fa fa-user">
+                              <h4>Transporte de funcionários</h4>
+                                <p><div><span style="color:#000000"><span style="font-size:14px">Quando o assunto é Transporte de Funcionários a solução mais inteligente é o fretamento</p>
+                              <p><a href="#">Saiba mais</a></p>
+                    </div>
+                 </div>
+                  <div class="fh5co-feature no-border">
+                   <div class="fh5co-feature-icon to-animate">
+                     <i class="icon-users"></i>
+                   </div>
+
+               <div class="fa fa-users">
+                    <h4>Terceirização (Compra x Locação)</h4>
+                         <p><p><span style="color:#000000"><span style="font-size:14px">Seu enfoque é exclusivamente financeiro e totalmente compreensível, comparando objetivamente o fluxo de caixa </p>
+                         <p><a href="#">Saiba mais</a></p>
+               </div>
+         </div>
+    </div>
 </div>
 
+           <div class="row">
+               <div class="col-md-8 col-md-offset-2 text-center">
+                  <a href="servico.php" class="btn btn-outline">Veja todos os serviços</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <div class="fh5co-bg-section" style="background-image: url(images/slide_2.jpg); background-attachment: fixed;">
+        <div class="fh5co-overlay"></div>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <div class="fh5co-hero-wrap">
+        <div class="fh5co-hero-intro text-center">
+
+              <a href="locacao.php" class="btn btn-danger">Tabela de preços de Locação de Veículos</a>
+                <a href="duvida.php" class="btn btn-primary">Dúvidas Frequentes</a>
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+   
+
+
+
+  
+      
+
+
+<div class="container" id="fh5co-products">
+                    <div class="row text-left">
+                        <div class="col-md-8">
+                            <h2 class="fh5co-section-lead">Nossa Frota</h2>
+                            <h3 class="fh5co-section-sub-lead"><p>Segue alguns dos ve&iacute;culos que temos em nossa frota de carros e vans.</p>
+</h3>
+                        </div>
+                        <div class="fh5co-spacer fh5co-spacer-md"></div>
+                    </div>
+                    <div class="row">
+
+                                                    <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                                <div class="fh5co-product">
+                                    <img src="img/20160803070831.jpg" alt="Carro executivo - Civic" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+                                    <h4><a class='fancybox' href='img/20160803070831.jpg' data-fancybox-group='gallery'>Carro executivo - Civic</a></h4>
+                                </div>
+                            </div>
+                                            <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                                <div class="fh5co-product">
+                                    <img src="img/20160803070843.jpg" alt="Carro executivo - Corolla" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+                                    <h4><a class='fancybox' href='img/20160803070843.jpg' data-fancybox-group='gallery'>Carro executivo - Corolla</a></h4>
+                                </div>
+                            </div>
+                                            <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                                <div class="fh5co-product">
+                                    <img src="img/20160803071202.jpg" alt="Carro executivo - Fusion" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+                                    <h4><a class='fancybox' href='img/20160803071202.jpg' data-fancybox-group='gallery'>Carro executivo - Fusion</a></h4>
+                                </div>
+                            </div>
+                                            <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                                <div class="fh5co-product">
+                                    <img src="img/20160804063522.jpg" alt="Van" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+                                    <h4><a class='fancybox' href='img/20160804063522.jpg' data-fancybox-group='gallery'>Van</a></h4>
+                                </div>
+                            </div>
+                                    </div>
+                </div>
+
+        </div>
+        
+        <!-- mapa -->
+        <iframe src="https://www.google.com.br/maps/place/EEEP+Maria+C%C3%A9lia+Pinheiro+Falc%C3%A3o/@-6.0478442,-38.4645557,17z/data=!4m5!3m4!1s0x0:0x571ac994da91696f!8m2!3d-6.0468705!4d-38.4655509" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>
+      </iframe>
+
+
+        <footer id="fh5co-footer">
+
+    <div class="container">
+        <div class="row">
+           <footer id="fh5co-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-4">
+                <div class="fh5co-footer-widget">
+                    <!--<h2 class="fh5co-footer-logo"><img src="https://www.infoaxel.com.br/site/admin/" class="img-responsive"></h2>-->
+                    <p>Empresa de transporte que oferece serviços executivos de transporte, locação de veículos de todas as categorias (compactos, executivo e de grupos).</p>
+                </div>
+
+                <div class="fh5co-footer-widget">
+                    <p><i class="glyphicon glyphicon-earphone"></i> (88) 0800-0000</p>
+                    <p><i class="fa fa-whatsapp"></i> (88) 9.99407250</p>
+                    <p><i class=" glyphicon glyphicon-envelope"></i> amandardg32@gmail.com</p>
+                    <p><i class="fa fa-map"></i> R. Projeta, 01 - Vila Cruz, Pereiro - CE, 63460-000</p>
+                </div>
+        <div class="fh5co-footer-widget">
+          <ul class="fh5co-social">
+            <li><a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+            <div class="col-md-2 col-sm-6">
+                <div class="fh5co-footer-widget top-level">
+                    <h4 class="fh5co-footer-lead ">Navegação</h4>
+                    <ul>
+                        <li><a href="index.php">Página principal</a></li>
+                        <li><a href="index.php#empresa">Empresa</a></li>
+                        <li><a href="index.php#servico">Serviços</a></li>
+                        <li><a href="index.php#frota">Frota</a></li>
+                        <li><a href="locacao.php">Locação</a></li>
+                        <li><a href="duvida.php">Principais Dúvidas</a></li>
+                        <li><a href="contato.php">Fale Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="visible-sm-block clearfix"></div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="fh5co-footer-widget top-level">
+                    <h4 class="fh5co-footer-lead">Serviços</h4>
+                    <ul class="fh5co-list-check">
+                       <li class="fa fa-check-circle-o"><a href="#servico">Transporte viagens / eventos / city tour</a></li>
+                        <li class="fa fa-check-circle-o"><a href="#servico">Transporte de funcionários</a></li>
+                        <li class="fa fa-check-circle-o"><a href="#servico">Transporte Executivo, Serviço à Disposição e Translado</a></li>
+                        <li class="fa fa-check-circle-o"><a href="#servico">Terceirização (Compra x Locação)</a></li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row fh5co-row-padded fh5co-copyright">
+            <div class="col-md-5">
+              <p><small>&copy;  Todos os direitos reservados 2005-2016.</small></p>
+                
+            </div>
+        </div>
+    </div>
+
+        
+</footer>
+
+        <!-- jQuery -->
+        <script src="js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Owl carousel -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- Waypoints -->
+        <script src="js/jquery.waypoints.min.js"></script>
+        <!-- Magnific Popup -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <!-- Main JS -->
+        <script src="js/main.js"></script>
+
+
+  
 </body>	
 </html>
