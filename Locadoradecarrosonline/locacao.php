@@ -11,9 +11,6 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <script src="https://use.fontawesome.com/bc520d82be.js"></script>
-    <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-   <!-- Modernizr JS -->
   <script src="js/modernizr-2.6.2.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -84,24 +81,36 @@
 <style type="text/css">
 	fieldset{
 		width: 126px;
-	
-        background-color: currentColor;
-        border: solid black;
-        margin-left: 50%;
-    }
+    background-color:rgb(240, 240, 240);
+    border: solid black;
+   }
+
 	#visor{
-        width: 120px; height: 40px; color: #ccc; font: 13px Arial; font-weight: bold;text-align: right;
-        
-	}
-    input{
-        width: 26px; height: 26px; font: 13px Arial; font-weight: bold;
-    }
-    #reset{
-        width: 26px; height: 26px; font: 13px Arial; font-weight: bold; background: #ccc; color: black;
-        text-align: center;
-    }
-    h4{margin-left: 40%}
+    width: 120px; height: 40px; color:rgb(90, 90, 90); font: 13px Arial; 
+    background-color: rgb( 251, 251, 251);
+    font-weight: bold;text-align: right;        
+	 }
     
+  input{
+    width: 26px; height: 26px; font: 13px Arial; font-weight: bold;
+  }
+  
+  #reset{
+    width: 26px; height: 26px; font: 13px Arial;
+    color:rgb(90, 90, 90);
+    font-weight: bold; background:; color: black;
+    text-align: center;
+    }
+  
+  h4{
+    margin-left: -25%
+  }
+    
+
+#form-car{
+  width: 40%
+}
+
 </style>
 </head>
 <body>
@@ -111,7 +120,6 @@
         <div class="container-fluid">
             <div class="navbar-header"> 
                 <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                <!--<a class="navbar-brand" href="index.php"><img src="img/autocad.png" class="img-responsive"></a>-->
             </div>
             <div id="fh5co-navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -166,49 +174,6 @@
         </div>
     </nav>
 </header>
-
-<div class="container" style="margin: center;">
-   
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="img/neggocio.jpg" alt="Los Angeles" style="width:100%;">
-      </div>
-
-      <div class="item">
-        <img src="img/sw4.jpg" alt="Chicago" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src="img/Hilux.jpg" alt="New york" style="width:100%;">
-      </div>
-
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
- 
-
-
 <h3>Escolha seu Ve&iacute;culo</h3>
 
 
@@ -235,8 +200,8 @@
 					<tr>
 						<td>&nbsp;</td>
 						<td>
-						<form action="http://localhost/adventurelog/v1/" id="form1" method="post" name="form1">
-						<table border="1" cellpadding="0" cellspacing="0" style="width:100%">
+						<form action="" id="form1" method="post" name="form1">
+						<table border="1" cellpadding="0" cellspacing="0" style="width:60%">
 							<tbody>
 								<tr>
 									<td rowspan="2">
@@ -326,43 +291,48 @@
 				</tbody>
 			</table>
 			</td>
+      <td>
+        <h4>veja quanto pagara pela sua locaçao desejada</h4>
+        <fieldset >
+          <form name="calc">
+            <input type="text" name="visor" maxlength="16" id="visor" value="" readonly>
+            <input type="button" id="reset" onclick="Reset()" name="" value="CE">
+            <p>
+            <input type="button" name="" value="7" onclick="Btn(7)">
+            <input type="button" name="" value="8" onclick="Btn(8)">
+            <input type="button" name="" value="9" onclick="Btn(9)">
+            <input type="button" name="" value="+" onclick="Op(1)">
+            <p>
+            <input type="button" name="" value="4" onclick="Btn(4)">
+            <input type="button" name="" value="5" onclick="Btn(5)">
+            <input type="button" name="" value="6" onclick="Btn(6)">
+            <input type="button" name="" value="-" onclick="Op(2)">
+            <p>
+            <input type="button" name="" value="1" onclick="Btn(1)">
+            <input type="button" name="" value="2" onclick="Btn(2)">
+            <input type="button" name="" value="3" onclick="Btn(3)">
+            <input type="button" name="" value="/" onclick="Op(3)">
+            <p>
+            <input type="button" name="" value="." onclick="calc.visor.value +='.'">
+            <input type="button" name="" value="0" onclick="Btn(0)">
+            <input type="button" name="" value="=" onclick="Igual()">
+            <input type="button" name="" value="X" onclick="Op(4)">
+            <p>
+          </form>
+        </fieldset>    
+      </td>
 		</tr>
 	</tbody>
 </table>
-<h4>veja quanto pagara pela sua locaçao desejada</h4>
-    <fieldset >
-	<form name="calc">
-		<input type="text" name="visor" maxlength="16" id="visor" value="" readonly>
-        
-            <input type="button" id="reset" onclick="Reset()" name="" value="CE">
-			<p>
-			<input type="button" name="" value="7" onclick="Btn(7)">
-			<input type="button" name="" value="8" onclick="Btn(8)">
-			<input type="button" name="" value="9" onclick="Btn(9)">
-			<input type="button" name="" value="+" onclick="Op(1)">
-			<p>
-			<input type="button" name="" value="4" onclick="Btn(4)">
-			<input type="button" name="" value="5" onclick="Btn(5)">
-			<input type="button" name="" value="6" onclick="Btn(6)">
-			<input type="button" name="" value="-" onclick="Op(2)">
-			<p>
-			<input type="button" name="" value="1" onclick="Btn(1)">
-			<input type="button" name="" value="2" onclick="Btn(2)">
-			<input type="button" name="" value="3" onclick="Btn(3)">
-			<input type="button" name="" value="/" onclick="Op(3)">
-			<p>
-			<input type="button" name="" value="." onclick="calc.visor.value +='.'">
-			<input type="button" name="" value="0" onclick="Btn(0)">
-			<input type="button" name="" value="=" onclick="Igual()">
-			<input type="button" name="" value="X" onclick="Op(4)">
-			<p>
-            
-	</form>
-</fieldset>
 
-    
-    
- <footer id="fh5co-footer">
+<form method="GET">
+  <input type="text" style="width: 12%" value="" id="cardese" placeholder="carro desejado"/>
+  <input type="text" style="width: 12%" value="" id="classcar" placeholder="classe do carro"/>
+  <input type="text" style="width: 12%" value="" id="diariacar" placeholder="diaria desejada"/>
+  <input type="submit" value="enviar" style="width: 12%"/>
+</form>
+
+<footer id="fh5co-footer">
 
     <div class="container">
         <div class="row">
@@ -371,7 +341,6 @@
         <div class="row">
             <div class="col-md-6 col-sm-4">
                 <div class="fh5co-footer-widget">
-                    <!--<h2 class="fh5co-footer-logo"><img src="https://www.infoaxel.com.br/site/admin/" class="img-responsive"></h2>-->
                     <p>Empresa de transporte que oferece serviços executivos de transporte, locação de veículos de todas as categorias (compactos, executivo e de grupos).</p>
                 </div>
 
@@ -428,23 +397,11 @@
             </div>
         </div>
     </div>
-
         
 </footer>
-
-        <!-- jQuery -->
-        <script src="js/jquery.min.js"></script>
-        <!-- jQuery Easing -->
-        <script src="js/jquery.easing.1.3.js"></script>
-        <!-- Bootstrap -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Owl carousel -->
-        <script src="js/owl.carousel.min.js"></script>
-        <!-- Waypoints -->
-        <script src="js/jquery.waypoints.min.js"></script>
-        <!-- Magnific Popup -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <!-- Main JS -->
-        <script src="js/main.js"></script>
 </body>	
 </html>
+<?php
+
+
+?>
