@@ -98,7 +98,7 @@
   #reset{
     width: 26px; height: 26px; font: 13px Arial;
     color:rgb(90, 90, 90);
-    font-weight: bold; background:; color: black;
+    font-weight: bold;  color: black;
     text-align: center;
     }
   
