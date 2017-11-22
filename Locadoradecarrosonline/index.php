@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-</ol>
+
 
  <link rel="stylesheet"  href="css/style.css"/>
  <link rel="stylesheet" type="text/css" href="bootstrap.reboot.min.css">
@@ -18,30 +18,22 @@
 
 <title>Locadora de Veículos</title>
 
-  <style>
-#logo{
-  margin-left: 10px;
-} 
-.container{
-  margin-top: 60px;
-}
-</style>
-
-
+  
 </head>
-<body>
-  <hr>
+<body class="container">
 <header>
       <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header"> 
                 <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                <!--<a class="navbar-brand" href="index.php"><img src="img/autocad.png" class="img-responsive"></a>-->
+                
             </div>
             <div id="fh5co-navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-
-                    <li class="active">
+                    <li>
+                    <img src="img/autocad.png" style="height: 50px; width: 130px; margin-left:-23%">
+                  </li>
+                    <li class="active" style="margin-left: -3%">
                       <a href="index.php"><span>Principal<span class="border"></span></span>
                       </a>
                     </li>
@@ -53,7 +45,7 @@
                     </li>
 
                     <li>
-                      <a href="index.php#servico">
+                      <a href="servico.php">
                         <span>Serviços<span class="border"></span></span>
                       </a>
                     </li>
@@ -86,6 +78,14 @@
                         <i class="glyphicon glyphicon-earphone"></i>
                          </span> (88) 9940-7250   (21) 7819-0645</a>
                     </li>
+
+                    <li>
+                       <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+
+                    <li>
+                       <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                     </li>
                 </ul>
             </div>
         </div>
@@ -241,15 +241,8 @@
   </div>
 </div>
 
-   
 
-
-
-  
-      
-
-
-<div class="container" id="fh5co-products">
+<div class="container" id="frota">
                     <div class="row text-left">
                         <div class="col-md-8">
                             <h2 class="fh5co-section-lead">Nossa Frota</h2>
@@ -259,26 +252,25 @@
                         <div class="fh5co-spacer fh5co-spacer-md"></div>
                     </div>
                     <div class="row">
-
-                                                    <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                      <div class="col-md-3 col-sm-12 col-xs-12 col-xxs-12 fh5co-mb30">
                                 <div class="fh5co-product">
                                     <img src="img/20160803070831.jpg" alt="Carro executivo - Civic" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
                                     <h4><a class='fancybox' href='img/20160803070831.jpg' data-fancybox-group='gallery'>Carro executivo - Civic</a></h4>
                                 </div>
                             </div>
-                                            <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                                            <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
                                 <div class="fh5co-product">
                                     <img src="img/20160803070843.jpg" alt="Carro executivo - Corolla" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
                                     <h4><a class='fancybox' href='img/20160803070843.jpg' data-fancybox-group='gallery'>Carro executivo - Corolla</a></h4>
                                 </div>
                             </div>
-                                            <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                                            <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
                                 <div class="fh5co-product">
                                     <img src="img/20160803071202.jpg" alt="Carro executivo - Fusion" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
                                     <h4><a class='fancybox' href='img/20160803071202.jpg' data-fancybox-group='gallery'>Carro executivo - Fusion</a></h4>
                                 </div>
                             </div>
-                                            <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 fh5co-mb30">
+                                            <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
                                 <div class="fh5co-product">
                                     <img src="img/20160804063522.jpg" alt="Van" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
                                     <h4><a class='fancybox' href='img/20160804063522.jpg' data-fancybox-group='gallery'>Van</a></h4>
@@ -289,11 +281,15 @@
 
         </div>
         
+        <div class="col-md12">
+        <h3>Maps</h3>
+        
+        <div id='gmap_canvas' style='height:440px;width:100%;'></div>
+        
+        	<!--<iframe src="https://www.google.com.br/maps/place/EEEP+Maria+C%C3%A9lia+Pinheiro+Falc%C3%A3o/@-6.0478442,-38.4645557,17z/data=!4m5!3m4!1s0x0:0x571ac994da91696f!8m2!3d-6.0468705!4d-38.4655509" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>
+      </iframe>	-->
+        </div>
         <!-- mapa -->
-        <iframe src="https://www.google.com.br/maps/place/EEEP+Maria+C%C3%A9lia+Pinheiro+Falc%C3%A3o/@-6.0478442,-38.4645557,17z/data=!4m5!3m4!1s0x0:0x571ac994da91696f!8m2!3d-6.0468705!4d-38.4655509" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>
-      </iframe>
-
-
         <footer id="fh5co-footer">
 
     <div class="container">
@@ -303,7 +299,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-4">
                 <div class="fh5co-footer-widget">
-                    <!--<h2 class="fh5co-footer-logo"><img src="https://www.infoaxel.com.br/site/admin/" class="img-responsive"></h2>-->
+                
                     <p>Empresa de transporte que oferece serviços executivos de transporte, locação de veículos de todas as categorias (compactos, executivo e de grupos).</p>
                 </div>
 
@@ -378,8 +374,14 @@
         <script src="js/jquery.magnific-popup.min.js"></script>
         <!-- Main JS -->
         <script src="js/main.js"></script>
-
-
-  
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+        <script type='text/javascript'>
+        	function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(-6.0478442,-38.4645557),
+        		mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), 
+    myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-6.045418923532541,-38.46295419790039)});
+    infowindow = new google.maps.InfoWindow({content:'<strong>Locadora de Carros Online</strong><br>Pereiro, CE<br>'});
+    google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}
+    google.maps.event.addDomListener(window, 'load', init_map);
+  </script>
 </body>	
 </html>

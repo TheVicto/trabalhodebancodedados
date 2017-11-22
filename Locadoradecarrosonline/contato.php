@@ -12,20 +12,21 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 
-    <body>
+    <body class="container">
 
-        <header id="fh5co-header" role="banner">
-
-    <nav class="navbar navbar-default" role="navigation">
+<header>
+      <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header"> 
                 <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                <!--<a class="navbar-brand" href="index.php"><img src="img/autocad.png" class="img-responsive"></a>-->
+                
             </div>
             <div id="fh5co-navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-
-                    <li class="active">
+                    <li>
+                    <img src="img/autocad.png" style="height: 50px; width: 130px; margin-left:-23%">
+                  </li>
+                    <li class="active" style="margin-left: -3%">
                       <a href="index.php"><span>Principal<span class="border"></span></span>
                       </a>
                     </li>
@@ -70,24 +71,22 @@
                         <i class="glyphicon glyphicon-earphone"></i>
                          </span> (88) 9940-7250   (21) 7819-0645</a>
                     </li>
+
+                    <li>
+                       <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+
+                    <li>
+                       <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-<aside class="fh5co-page-heading">
-     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="fh5co-page-heading-lead">Contato
-                 <span class="fh5co-border"></span>
-                </h1>
 
-            </div>
-        </div>
-    </div>
-</aside>
+
 
         <div id="fh5co-main">
             <div class="container">
