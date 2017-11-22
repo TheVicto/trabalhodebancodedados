@@ -46,14 +46,18 @@ if($query){
 
     <title>Cadrasto</title>
 </head>
-  <header id="fh5co-header" role="banner">      
-   <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">             
-     <div id="fh5co-navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">              
+<header>
 
-			     <li>
-              <img src="img/autocad.png" style="height: 60px; width: 130px; position: left;">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+     	<div class="navbar-header"> 
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        </div>
+   <nav>
+     <div id="fh5co-navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+			<li class="active">
+              <a href="index.php"><span>Principal<span class="border"></span></span></a>
             </li>
 
             <li>
@@ -111,10 +115,14 @@ if($query){
 </header>
 
 <boby>
-<nav class="navbar navbar-default" role="navigation" style="width: 870px; background:white; margin-left: 462px; height: 800px; position: center;">   
+<nav class="navbar navbar-default" role="navigation" style="width: 850px; height: 800px; position: center;">   
 	<div class="box_s_reg">
     	<h2 class="line_title marginTop0">Crie sua Conta</h2>
     <p></p>
+
+    <div>
+      <form id="formCadastro" name="formCadastro" class="formulario validate nice custom" method="post" action="https://www.rentcars.com/pt-br/cliente/cadastro">
+
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h4>Dados pessoais</h4>
@@ -125,6 +133,7 @@ if($query){
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
         <div class="form-group">
            <div class="form-inline form-group-gender">
+
                 <label class="radio-inline radio-first-label" for="Tratamento"><span class="req">*</span> Tratamento:</label><br>
                 <label class="radio-inline radio-gender-label"><input type="radio" name="Tratamento" value="M"> Sr.</label>
                 <label class="radio-inline radio-gender-label"><input type="radio" name="Tratamento" value="F"> Sra.</label>
@@ -135,6 +144,7 @@ if($query){
 
      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 elVal">
         <div class="form-group">
+
           <label for="Nome"><span class="req">*</span> Nome:</label>
             <input type="text" name="Nome" placeholder="Nome" id="Nome" class="input-text expand form-control"/>
         </div>
@@ -169,6 +179,7 @@ if($query){
 
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 elVal">
         <div class="form-group">
+
           <label for="CodigoPaisNacionalidade"><span class="req">*</span> Nacionalidade:</label>
             <select name="CodigoPais" id="CodigoPaisNacionalidade" class="input-text medium form-control"/>
                 <option value="">Selecione</option>
@@ -296,12 +307,11 @@ if($query){
             </ul>
         </div>
     </div>
+</form>
 </nav>
 
-<div id="loadingCadastro" class="mini-loading" style="display:none;">
-  <h3>Validando cadastro, aguarde...</h3>
-</div>
-
-
+    <div id="loadingCadastro" class="mini-loading" style="display:none;">
+        <h3>Validando cadastro, aguarde...</h3>
+    </div>
   </boby>          
 </html>
