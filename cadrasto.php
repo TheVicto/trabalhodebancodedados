@@ -17,7 +17,7 @@ $end = $end1."-".$end2."-".$end3.".".$end4;
 
 $passC = md5(base64_encode($pass));
 
-$sql = "INSERT INTO clientes (nome,email, senha, endereco) VALUES ('$nome', '$email', '$passC', '$end')";
+$sql = "INSERT INTO tbclientes (nome,email, senha, endereco) VALUES ('$nome', '$email', '$passC', '$end')";
 
 $query = mysqli_query($con, $sql);
 if($query){
@@ -46,76 +46,81 @@ if($query){
 
     <title>Cadrasto</title>
 </head>
+
+
+<boby class="container">
 <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header"> 
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                
+            </div>
+            <div id="fh5co-navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <img src="img/autocad.png" style="height: 50px; width: 130px; margin-left:-23%">
+                  </li>
+                    <li class="active" style="margin-left: -3%">
+                      <a href="index.php"><span>Principal<span class="border"></span></span>
+                      </a>
+                    </li>
 
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-     	<div class="navbar-header"> 
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <li>
+                      <a href="index.php#empresa">
+                        <span>A Empresa <span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="index.php#servico">
+                        <span>Serviços<span class="border"></span></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.php#frota">
+                        <span>Frota<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="locacao.php">
+                        <span>Locação<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="duvida.php">
+                        <span>Dúvidas<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="contato.php">
+                        <span>Contato<span class="border"></span></span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#"><span style="color: #ff9900">
+                        <i class="glyphicon glyphicon-earphone"></i>
+                         </span> (88) 9940-7250   (21) 7819-0645</a>
+                    </li>
+
+                    <li>
+                       <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+
+                    <li>
+                       <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                     </li>
+                </ul>
+            </div>
         </div>
-   <nav>
-     <div id="fh5co-navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-			<li class="active">
-              <a href="index.php"><span>Principal<span class="border"></span></span></a>
-            </li>
-
-            <li>
-              <a href="index.php#empresa">
-                <span>A Empresa <span class="border"></span></span>
-              </a>
-            </li>
-
-            <li>
-              <a href="index.php#servico">
-                <span>Serviços<span class="border"></span></span>
-              </a>
-            </li>
-
-            <li>
-              <a href="index.php#frota">
-                <span>Frota<span class="border"></span></span>
-              </a>
-            </li>
-       
-            <li>
-              <a href="locacao.php">
-                <span>Locação<span class="border"></span></span>
-              </a>
-            </li>
-
-            <li>
-              <a href="duvida.php">
-                <span>Dúvidas<span class="border"></span></span>
-              </a>
-            </li>
-
-            <li>
-              <a href="contato.php">
-                <span>Contato<span class="border"></span></span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#"><span style="color: #ff9900">
-                <i class="glyphicon glyphicon-earphone"></i>
-                  </span> (88) 9940-7250   (88) 0800-000</a>
-            </li>
-
-       		<li>
-       			<a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-       		</li>
-
-            <li>
-            	<a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-            </li>
-         </ul> 
-       </div>
-   </nav>
+    </nav>
 </header>
 
-<boby>
-<nav class="navbar navbar-default" role="navigation" style="width: 850px; height: 800px; position: center;">   
+<nav class="navbar navbar-default" role="navigation" style="width: 850px; height: 800px; margin-left: 20%">   
 	<div class="box_s_reg">
     	<h2 class="line_title marginTop0">Crie sua Conta</h2>
     <p></p>

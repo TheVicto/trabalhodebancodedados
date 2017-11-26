@@ -21,15 +21,18 @@
 
 <body class="container">
 <header>
-      <nav class="navbar navbar-default" style="z-index: 1;" role="navigation">
+      <nav class="navbar navbar-default"  style="z-index: 1">
         <div class="container-fluid">
             <div class="navbar-header"> 
                 <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                
             </div>
             <div id="fh5co-navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-
-                    <li class="active">
+                    <li>
+                    <img src="img/autocad.png" style="height: 50px; width: 130px; margin-left:-23%">
+                  </li>
+                    <li class="active" style="margin-left: -3%">
                       <a href="index.php"><span>Principal<span class="border"></span></span>
                       </a>
                     </li>
@@ -86,7 +89,7 @@
             </div>
         </div>
     </nav>
-</header> 
+</header>
 
 	<img id="tela" class="img-responsive" src="img/autocad.png">
 <div class="row" style="height: 200px">
