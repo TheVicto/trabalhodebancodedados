@@ -1,8 +1,18 @@
+<?php
+error_reporting(0);
+session_start();
+
+if($_GET['Sair'] == 'sair'){
+
+  unset($_SESSION['nome']);
+  header('location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-</ol>
+
 
  <link rel="stylesheet"  href="css/style.css"/>
  <link rel="stylesheet" type="text/css" href="bootstrap.reboot.min.css">
@@ -18,15 +28,6 @@
 
 <title>Locadora de Veículos</title>
 
-  <style>
-#logo{
-  margin-left: 10px;
-} 
-.container{
-  margin-top: 60px;
-}
-#gmap_canvas img{max-width:none!important;background:none!important}
-</style>
 </head>
 <body class="container">
 <header>
@@ -34,12 +35,14 @@
         <div class="container-fluid">
             <div class="navbar-header"> 
                 <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                <!--<a class="navbar-brand" href="index.php"><img src="img/autocad.png" class="img-responsive"></a>-->
+                
             </div>
             <div id="fh5co-navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-
-                    <li class="active">
+                    <li>
+                    <img src="img/autocad.png" style="height: 50px; width: 130px; margin-left:-23%">
+                  </li>
+                    <li class="active" style="margin-left: -3%">
                       <a href="index.php"><span>Principal<span class="border"></span></span>
                       </a>
                     </li>
@@ -51,7 +54,7 @@
                     </li>
 
                     <li>
-                      <a href="index.php#servico">
+                      <a href="servico.php">
                         <span>Serviços<span class="border"></span></span>
                       </a>
                     </li>
@@ -82,16 +85,30 @@
                     <li>
                       <a href="#"><span style="color: #ff9900">
                         <i class="glyphicon glyphicon-earphone"></i>
-                         </span> (88) 9940-7250   (21) 7819-0645</a>
+                         </span> (88) 9940-7250   (88) 0800-000</a>
                     </li>
 
-                    <li>
+                  <?php
+                  if($_SESSION['nome']){
+
+                    echo ' <li>
+                       <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span>'.$_SESSION['nome'].'</a>
+                    </li>
+                      <li>
+                       <a href="?Sair=sair"><span class="glyphicon glyphicon-log-in"></span> Sair</a>
+                     </li>';
+                  }else{
+
+                    echo ' <li>
                        <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
                     </li>
-
-                    <li>
+                      <li>
                        <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                     </li>
+                     </li>';
+
+                  }
+                  ?>
+                      
                 </ul>
             </div>
         </div>
@@ -141,11 +158,9 @@
  <a name="empresa"></a>
  <div class="row text-center">
   <div class="col-md-8 col-md-offset-2">
-
      <h2 class="fh5co-section-lead">A Empresa</h2>
        <h3 class="fh5co-section-sub-lead">
           <p style="text-align:justify;">
-
             <p>A Empresa no presta serviços de locação de veículo em todo estado do Ceara e na Cidades do estado Rio Grande do Norte. Atua no seguimento,locação de veículo,transporte, vans, carro executivo e motoristas
             </p>
 
@@ -157,13 +172,12 @@
         </p>
         </div>
 <hr>
-
 <div class="fh5co-spacer fh5co-spacer-md"></div>
   
   <a name="servico"></a>
    <div class="row text-center">
       <div class="col-md-8 col-md-offset-2">
-        <hr>
+       <hr>
         <h2 class="fh5co-section-lead">Nossos Serviços</h2>
       </div>
 
@@ -174,54 +188,52 @@
            <div class="col-md-6 col-sm-6">
              <div class="fh5co-feature no-border">
                  <div class="fh5co-feature-icon to-animate">
-
                     <i class="icon-clock2"></i>
        </div>
-                 <div class="access_time" id="glyphicon-time">
-                    <h4>Transporte viagens / eventos / city tour</h4>
-                       <p><p><span style="font-size:14px"><span style="color:#000000">“Viajar é sempre bom, mas tão importante quanto o lugar é como chegar lá...”. Nada melhor ...</p>
-                           <p><a href="#">Saiba mais</a></p>
-               </div>
+
+       <div class="access_time" id="glyphicon-time">
+         <h4>Transporte viagens / eventos / city tour</h4>
+            <p><p><span style="font-size:14px"><span style="color:#000000">“Viajar é sempre bom, mas tão importante quanto o lugar é como chegar lá...”. Nada melhor ...</p>
+              <p><a href="#">Saiba mais</a></p>
+            </div>
           </div>
-                      <div class="fh5co-feature no-border">
-                        <div class="fh5co-feature-icon to-animate">
-                           <i class="icon-bag"></i>
-                       </div>
+   <div class="fh5co-feature no-border">
+     <div class="fh5co-feature-icon to-animate">
+        </div>
 
-                      <div class="fh5co-feature-text">
-                         <h4>Transporte Executivo, Serviço à Disposição e Translado</h4>
-                          <p><p><span style="color:#000000"><span style="font-size:14px">Tranquilidade - Você não precisa se preocupar com as condições do trânsito e do tempo</p>
-                         <p><a href="#">Saiba mais</a></p>
-                      </div>
-                    </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6">
-                    <div class="fh5co-feature no-border">
-                    <div class="fh5co-feature-icon to-animate">
-                    <i class="icon-user"></i>
-                    </div>
-
-                    <div class="fa fa-user">
-                              <h4>Transporte de funcionários</h4>
-                                <p><div><span style="color:#000000"><span style="font-size:14px">Quando o assunto é Transporte de Funcionários a solução mais inteligente é o fretamento</p>
-                              <p><a href="#">Saiba mais</a></p>
-                    </div>
-                 </div>
-                  <div class="fh5co-feature no-border">
-                   <div class="fh5co-feature-icon to-animate">
-                     <i class="icon-users"></i>
-                   </div>
-
-               <div class="fa fa-users">
-                    <h4>Terceirização (Compra x Locação)</h4>
-                         <p><p><span style="color:#000000"><span style="font-size:14px">Seu enfoque é exclusivamente financeiro e totalmente compreensível, comparando objetivamente o fluxo de caixa </p>
-                         <p><a href="#">Saiba mais</a></p>
-               </div>
-         </div>
-    </div>
+   <div class="fh5co-feature-text">
+     <h4>Transporte Executivo, Serviço à Disposição e Translado</h4>
+      <p><p><span style="color:#000000"><span style="font-size:14px">Tranquilidade - Você não precisa se preocupar com as condições do trânsito e do tempo</p>
+        <p><a href="#">Saiba mais</a></p>
+   </div>
+  </div>
 </div>
 
+
+    <div class="col-md-6 col-sm-6">
+    <div class="fh5co-feature no-border">
+    <div class="fh5co-feature-icon to-animate"></div>
+
+    <h4>Transporte de funcionários</h4>
+      <p><div><span style="color:#000000"><span style="font-size:14px">Quando o assunto é Transporte de Funcionários a solução mais inteligente é o fretamento</p>
+        <p><a href="#">Saiba mais</a></p>
+  </div>
+</div>
+
+    <div class="fh5co-feature no-border">
+      <div class="fh5co-feature-icon to-animate">
+        <i class="icon-users"></i>
+          </div>
+
+  <div>
+    <h4>Terceirização (Compra x Locação)</h4>
+      <p><p><span style="color:#000000"><span style="font-size:14px">Seu enfoque é exclusivamente financeiro e totalmente compreensível, comparando objetivamente o fluxo de caixa </p>
+        <p><a href="#">Saiba mais</a></p>
+  </div>
+</div>
+</div>
+</div>
+<hr>
            <div class="row">
                <div class="col-md-8 col-md-offset-2 text-center">
                   <a href="servico.php" class="btn btn-outline">Veja todos os serviços</a>
@@ -246,7 +258,7 @@
     </div>
   </div>
 </div>
-
+<hr>
 
 <div class="container" id="frota">
                     <div class="row text-left">
@@ -254,46 +266,43 @@
                             <h2 class="fh5co-section-lead">Nossa Frota</h2>
                             <h3 class="fh5co-section-sub-lead"><p>Segue alguns dos ve&iacute;culos que temos em nossa frota de carros e vans.</p>
 </h3>
-                        </div>
-                        <div class="fh5co-spacer fh5co-spacer-md"></div>
-                    </div>
-                    <div class="row">
+  </div>
+        <div class="fh5co-spacer fh5co-spacer-md"></div>
+         </div>
+           <div class="row">
                       <div class="col-md-3 col-sm-12 col-xs-12 col-xxs-12 fh5co-mb30">
-                                <div class="fh5co-product">
-                                    <img src="img/20160803070831.jpg" alt="Carro executivo - Civic" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
-                                    <h4><a class='fancybox' href='img/20160803070831.jpg' data-fancybox-group='gallery'>Carro executivo - Civic</a></h4>
-                                </div>
-                            </div>
-                                            <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
-                                <div class="fh5co-product">
-                                    <img src="img/20160803070843.jpg" alt="Carro executivo - Corolla" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
-                                    <h4><a class='fancybox' href='img/20160803070843.jpg' data-fancybox-group='gallery'>Carro executivo - Corolla</a></h4>
-                                </div>
-                            </div>
-                                            <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
-                                <div class="fh5co-product">
-                                    <img src="img/20160803071202.jpg" alt="Carro executivo - Fusion" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
-                                    <h4><a class='fancybox' href='img/20160803071202.jpg' data-fancybox-group='gallery'>Carro executivo - Fusion</a></h4>
-                                </div>
-                            </div>
-                                            <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
-                                <div class="fh5co-product">
-                                    <img src="img/20160804063522.jpg" alt="Van" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
-                                    <h4><a class='fancybox' href='img/20160804063522.jpg' data-fancybox-group='gallery'>Van</a></h4>
-                                </div>
-                            </div>
-                                    </div>
-                </div>
-
+          <div class="fh5co-product">
+            <img src="img/20160803070831.jpg" alt="Carro executivo - Civic" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+          <h4><a class='fancybox' href='img/20160803070831.jpg' data-fancybox-group='gallery'>Carro executivo - Civic</a></h4>
+         </div>
+      </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
+          <div class="fh5co-product">
+           <img src="img/20160803070843.jpg" alt="Carro executivo - Corolla" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+           <h4><a class='fancybox' href='img/20160803070843.jpg' data-fancybox-group='gallery'>Carro executivo - Corolla</a></h4>
+          </div>
         </div>
+       <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
+        <div class="fh5co-product">
+         <img src="img/20160803071202.jpg" alt="Carro executivo - Fusion" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+            <h4><a class='fancybox' href='img/20160803071202.jpg' data-fancybox-group='gallery'>Carro executivo - Fusion</a></h4>
+        </div>
+       </div>
+       <div class="col-md-3 col-sm-6 col-xs-12 col-xxs-12 fh5co-mb30">
+          <div class="fh5co-product">
+            <img src="img/20160804063522.jpg" alt="Van" class="img-responsive img-rounded to-animate" style="width: 250px; height: 180px;">
+              <h4><a class='fancybox' href='img/20160804063522.jpg' data-fancybox-group='gallery'>Van</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
         
         <div class="col-md12">
         <h3>Maps</h3>
         
         <div id='gmap_canvas' style='height:440px;width:100%;'></div>
-        
-        	<!--<iframe src="https://www.google.com.br/maps/place/EEEP+Maria+C%C3%A9lia+Pinheiro+Falc%C3%A3o/@-6.0478442,-38.4645557,17z/data=!4m5!3m4!1s0x0:0x571ac994da91696f!8m2!3d-6.0468705!4d-38.4655509" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>
-      </iframe>	-->
+       
         </div>
         <!-- mapa -->
         <footer id="fh5co-footer">
@@ -305,7 +314,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-4">
                 <div class="fh5co-footer-widget">
-                    <!--<h2 class="fh5co-footer-logo"><img src="https://www.infoaxel.com.br/site/admin/" class="img-responsive"></h2>-->
+                
                     <p>Empresa de transporte que oferece serviços executivos de transporte, locação de veículos de todas as categorias (compactos, executivo e de grupos).</p>
                 </div>
 
