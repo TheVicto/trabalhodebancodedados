@@ -1,24 +1,32 @@
+<?php
+error_reporting(0);
+session_start();
+
+if($_GET['Sair'] == 'sair'){
+
+  unset($_SESSION['nome']);
+  header('location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-
-
  <link rel="stylesheet"  href="css/style.css"/>
  <link rel="stylesheet" type="text/css" href="bootstrap.reboot.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="fonts/glyphocons-halfliengs-regular.ttf">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-  <script src="https://use.fontawesome.com/bc520d82be.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js.map" > </script>
+  <script type="text/javascript" src="js/bootstrap.popup.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
 <title>Locadora de Veículos</title>
 
-  
 </head>
 <body class="container">
 <header>
@@ -50,7 +58,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="index.php#frota">
+                      <a href="frota.php">
                         <span>Frota<span class="border"></span></span>
                       </a>
                     </li>
@@ -76,16 +84,30 @@
                     <li>
                       <a href="#"><span style="color: #ff9900">
                         <i class="glyphicon glyphicon-earphone"></i>
-                         </span> (88) 9940-7250   (21) 7819-0645</a>
+                         </span> (88) 9940-7250   (88) 0800-000</a>
                     </li>
 
-                    <li>
+                  <?php
+                  if($_SESSION['nome']){
+
+                    echo ' <li>
+                       <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span>'.$_SESSION['nome'].'</a>
+                    </li>
+                      <li>
+                       <a href="?Sair=sair"><span class="glyphicon glyphicon-log-in"></span> Sair</a>
+                     </li>';
+                  }else{
+
+                    echo ' <li>
                        <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
                     </li>
-
-                    <li>
+                      <li>
                        <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                     </li>
+                     </li>';
+
+                  }
+                  ?>
+                      
                 </ul>
             </div>
         </div>
@@ -285,9 +307,7 @@
         <h3>Maps</h3>
         
         <div id='gmap_canvas' style='height:440px;width:100%;'></div>
-        
-        	<!--<iframe src="https://www.google.com.br/maps/place/EEEP+Maria+C%C3%A9lia+Pinheiro+Falc%C3%A3o/@-6.0478442,-38.4645557,17z/data=!4m5!3m4!1s0x0:0x571ac994da91696f!8m2!3d-6.0468705!4d-38.4655509" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>
-      </iframe>	-->
+       
         </div>
         <!-- mapa -->
         <footer id="fh5co-footer">

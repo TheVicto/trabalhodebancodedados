@@ -1,115 +1,60 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Login</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<style type="text/css">
-		* { margin: 0 auto; padding: 0 }
-		#tela{
-			margin-top: -100px;
-			width: 83.4%;
-			height: 100%;
-			position: absolute;
-			z-index: 0;
-
-		}
-		input { margin-top: 5px; }
-	</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Administração</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	
 </head>
+  <body>
 
+    <div class="row">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Login</div>
+        <div class="card-body ">
 
-<body class="container">
-<header>
-      <nav class="navbar navbar-default"  style="z-index: 1">
-        <div class="container-fluid">
-            <div class="navbar-header"> 
-                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                
+          <form action="vlogin.php" method="POST">
+            
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" name="email"  id="email" placeholder="Email">
             </div>
-            <div id="fh5co-navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                    <img src="img/autocad.png" style="height: 50px; width: 130px; margin-left:-23%">
-                  </li>
-                    <li class="active" style="margin-left: -3%">
-                      <a href="index.php"><span>Principal<span class="border"></span></span>
-                      </a>
-                    </li>
 
-                    <li>
-                      <a href="index.php#empresa">
-                        <span>A Empresa <span class="border"></span></span>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="index.php#servico">
-                        <span>Serviços<span class="border"></span></span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.php#frota">
-                        <span>Frota<span class="border"></span></span>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="locacao.php">
-                        <span>Locação<span class="border"></span></span>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="duvida.php">
-                        <span>Dúvidas<span class="border"></span></span>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="contato.php">
-                        <span>Contato<span class="border"></span></span>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#"><span style="color: #ff9900">
-                        <i class="glyphicon glyphicon-earphone"></i>
-                         </span> (88) 9940-7250   (21) 7819-0645</a>
-                    </li>
-
-                    <li>
-                       <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                    </li>
-
-                    <li>
-                       <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                     </li>
-                </ul>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Senha</label>
+              <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
             </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                  <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input">  Lembrar-me  </label>
+              </div>
+            </div>
+
+              <input class="btn btn-primary" value="Enviar" type="submit"> 
+            
+        
+          </form>
+
+
+          <div class="text-center">
+            <a class="d-block small mt-3" href="cadrasto.php">Cadraste-se</a>
+            <a class="d-block small" href="admin/Alogin.php">Administrador</a>
+          </div>
         </div>
-    </nav>
-</header>
-
-	<img id="tela" class="img-responsive" src="img/autocad.png">
-<div class="row" style="height: 200px">
-	<div class="col-md-4"></div>
-</div>
-<div class="row">
-	<div class="col-md-4"></div>
-	<div class="col-md-4">
-	<form action="logando.php" method="post" class="form form-control">
-	<fieldset>
-	<legend>Login</legend>
-		<input class="form-control" type="text" name="user" placeholder="Usuário">
-		<input class="form-control" type="password" name="pass" placeholder="Senha" minlength="6">
-		<input class="form-control btn-primary" id="btn" type="submit" value="Login">	
-	</fieldset>
-
-</form>
-	</div>
-	<div class="col-md-4"></div>
-</div>
-
-</body>
+      </div>
+    </div>
+  </body>
 </html>
