@@ -337,7 +337,8 @@
 			</table>
 			</td>
 			<td>
-		  <!-- <fieldset >
+			<h4>veja quanto pagara por sua locaçao desejada</h4>
+			<!-- <fieldset >
 				<form name="calc">
 				<input type="text" name="visor" maxlength="16" id="visor" value="" readonly>
         
@@ -366,98 +367,23 @@
             
 			</form>
 		</fieldset>         -->
-    
 			</td>
 			
 		</tr>
 
 	</tbody>
 </table>
-
-<!--     <?php 
-//require("conexao.php");
- ////////////////////////////////////////////////////////////////////////////////////////  a// = $_GET[//'modelocar'];14:38 24/11/2017
-
-//if(isset($_GET['$busca'])){
-  $sql// = "SELECT * FROM tbcarro WHERE modelodocarro LIKE '%".$busca."%'";
-}//else{
-  $sql// = "SELECT * FROM tbcarro WHERE modelodocarro LIKE '%".$busca."%'";
-}
-
-$query// = mysqli_query($con, $sql);
-// $resul = mysqli_num($query);
-
-?>
-
-    <input type="text" name="busca" value="<?php echo $busca?>">
- <footer id="fh5co-footer">
-  <?php
-
-while($dados = mysqli_fetch_assoc($query)){
-  echo "<h4>".$dados['modelodocarro']."</h4>";
- //echo "<img src='images/".$dados['imagem']."'/>";
- echo "<h5>classe: ".$busca['classedocarro']."</h5>";
- //echo "<a  class='btn' href='detalhes.php?id=".$dados['idcarro']."'>+ Detalhes</a>";
- //echo "</div>";
-}
-?> -->
-
-<hr>
-<br>
-<form method="get">
-     <input type="button" name="" value="Palio 2 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Palio 4 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Palio 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Palio 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Palio 2 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Palio 4 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <br>
-     <input type="button" name="" value="Celta 2 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Celta 4 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Celta 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Celta 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Celta 2 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Celta 4 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <br>
-     <input type="button" name="" value="Gol 2 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Gol 4 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Gol 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Gol 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Gol 2 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Gol4 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">    
-     <br>
-     <input type="button" name="" value="Prisma 2 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Prisma 4 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Prisma 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Prisma 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Prisma 2 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Prisma 4 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <br>
-     <input type="button" name="" value="Doblo 2 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Doblo 4 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Doblo 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Doblo 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Doblo 2 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Doblo 4 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <br>
-     <input type="button" name="" value="Zafira 2 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Zafira 4 portas sem ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Zafira 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Zafira 2 portas com ar" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Zafira 2 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <input type="button" name="" value="Zafira 4 portas com ar.dir.hidr,vidr.trav.eletr" style="width: auto; font-size: 11px">
-     <br>
-</form>
-
-
 <img id="icone" src="img/logo.jpg" style="width: 160px; height: 100px">
-<form method="get">
+<form method="GET">
   <input type="text" id="modelocar" name="modelocar" placeholder="modelo de carro desejado" style="width: 12.2%">
   <input type="text" id="classcar" name="classcar" placeholder="classe do veiculo" style="width: 12.2%">
   <input type="" id="valordiaria" name="valordiaria" placeholder="valor a pagar por sua locaçao" style="width: 14%">
   <input type="submit" value="enviar" style="width: 5%">
   
 </form>
+    
+    <input type="hidden" name="busca" value="<?php echo $busca?>">
+ <footer id="fh5co-footer">
 
     <div class="container">
         <div class="row">
@@ -528,6 +454,35 @@ while($dados = mysqli_fetch_assoc($query)){
         
 </body>	
 </html>
+<?php
+require("conexao.php");
+$busca = $_GET['classcar'];
+
+if(isset($_GET['classcar'])){
+  $sql = "SELECT * FROM tbcarro WHERE classedocarro LIKE '%".$busca."%' ORDER BY ";
+}else{
+  $sql = "SELECT * FROM tbcarro WHERE classedocarro LIKE '%".$busca."%'";
+}
+
+$query = mysqli_query($con, $sql);
+$resul = mysqli_num($query);
+
+?>
+
+<?php
+
+echo "Foram encontrado(s) ".$resul." resultado(s) para a palavra ".$busca.'';
+
+while($dados = mysqli_fetch_($query)){
+
+
+  echo "<h4>".$dados['modelodocarro']."</h4>";
+  echo "<img src='images/".$dados['imagem']."'/>";
+  echo "<h5>Preço: ".$dados['classedocarro']."</h5>";
+  echo "<a  class='btn' href='detalhes.php?id=".$dados['idcarro']."'>+ Detalhes</a>";
+  echo "</div>";
+}
+?>
 <script type="text/javascript">
   var campo = document.getElementById('modelocar');
 

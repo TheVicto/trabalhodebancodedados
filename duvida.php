@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-</ol>
+
 
 <!--Mudar para o normal-->
  <link rel="stylesheet"  href="css/style.css"/>
@@ -19,33 +19,23 @@
   <script src="js/modernizr-2.6.2.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-
 <title>Locadora de Veículos</title>
-
-  <style>
-#logo{
-  margin-left: 10px;
-} 
-.container{
-  margin-top: 60px;
-}
-</style>
-
-
 </head>
 <body class="container">
 
 <header>
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header"> 
                 <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                <!--<a class="navbar-brand" href="index.php"><img src="img/autocad.png" class="img-responsive"></a>-->
+                
             </div>
             <div id="fh5co-navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-
-                    <li class="active">
+                    <li>
+                    <img src="img/autocad.png" style="height: 50px; width: 130px; margin-left:-23%">
+                  </li>
+                    <li class="active" style="margin-left: -3%">
                       <a href="index.php"><span>Principal<span class="border"></span></span>
                       </a>
                     </li>
@@ -103,6 +93,7 @@
         </div>
     </nav>
 </header>
+
 
 <aside class="fh5co-page-heading">
   <div class="container">
@@ -241,7 +232,6 @@ Em caso do condutor&nbsp;ser diretamente autuado pelo agente de tr&acirc;nsito, 
         <div class="row">
             <div class="col-md-6 col-sm-4">
                 <div class="fh5co-footer-widget">
-                    <!--<h2 class="fh5co-footer-logo"><img src="https://www.infoaxel.com.br/site/admin/" class="img-responsive"></h2>-->
                     <p>Empresa de transporte que oferece serviços executivos de transporte, locação de veículos de todas as categorias (compactos, executivo e de grupos).</p>
                 </div>
 

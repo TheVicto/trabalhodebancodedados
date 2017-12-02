@@ -85,87 +85,55 @@
   <input type="text" name="busca" id="busca" placeholder="Pesquisar por veiculo:">
   <input type="submit" name="" value="buscar">
 </form>
-<table style="margin-left: -3%">
-  <tr>
-    <td><img src="img/palio2.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/palio2.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/palio4.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/palio4.jpg" style="width:240px;"></td>
-  </tr>
-  <tr>
-    <td style="padding-left: 8%"><a href="detalhes.php">detalhes</a></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="detalhes.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="detalhes.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="detalhes.php">detalhes</a></td></td>
+    <?php
+require("conexao.php");
+$registros = 9;
 
-  </tr>
-  <tr>
-    <td><img src="img/gol2.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/gol2.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/gol4.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/gol4.jpg" style="width:240px;"></td>
-    
-  </tr>
-  <tr>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-  </tr>
-  
-  <tr>
-    <td><img src="img/celta2.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/celta2.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/celta4.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/celta4.jpg" style="width:240px;"></td>
-    
-  </tr>
-  <tr>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
+$sql = "SELECT * FROM tbcarro";
+$query = mysqli_query($con, $sql);
 
-  </tr>
-  <tr>
+if(isset($_GET['pagina'])){
+	$pagina = $_GET['pagina'];
+}else{
+	$pagina = 1;
+}
 
-    <td><img src="img/prisma.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/prisma.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/doblo.jpg" style="width:240px;"></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td><img src="img/zafira.jpg" style="width:240px;"></td>
-    
-  </tr>
-  <tr>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-    <td><h3 style="color: rgb(255,255,255);">asdfghjjj</h3></td>
-    <td style="padding-left: 8%"><a href="locacao.php">detalhes</a></td></td>
-  </tr>
-</table>
+$resultados = mysqli_num_rows($query);
+
+$inicial = ($registros*$pagina)-$registros;
+$numPaginas = ceil($resultados/$registros);
+
+$sql = "SELECT * FROM tbcarro LIMIT $inicial, $registros";
+$query = mysqli_query($con, $sql);
+
+echo "<div class='row'>";
+
+while($dados = mysqli_fetch_assoc($query)){
+	echo "<div class='col-md-4'>";
+		echo "<div id='produtos'>";
+			echo "<h4>".$dados['modelodocarro']."</h4>";
+			echo "<img class='img-responsive' src='img/".$dados['fotocarro'].".jpg'/>";
+			echo "<h4>".$dados['marcacarro']."</h4>";
+			echo "<a  class='btn' href='detalhes.php?id=".$dados['idcarro']."'>+ Detalhes</a>";
+		echo "</div>";
+	echo "</div>";
+}
+echo "</div>";
+echo "<div class='row' id='space'>";
+	echo "<div class='col-md-12'>";
+
+	echo "</div>";
+echo "</div>";
+
+echo "<div class='row'>";
+	echo "<div class='col-md-12'><center><ul>";
+	for($i = 1; $i < $numPaginas + 1; $i++){
+		echo "<a href='index.php?pagina=".$i."'>$i</a>";
+	}
+	echo "</center></ul></div>";
+echo "</div>";
+?>
+
   
 <div class="container">
       <div class="row">

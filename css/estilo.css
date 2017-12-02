@@ -1,0 +1,29 @@
+body {
+    color: #000;
+}
+
+.navbar-brand img { margin-top: -17px }
+
+#fh5co-footer {
+    padding: 1em 0;
+}
+
+.fh5co-spacer-lg {
+    height: 20px;
+}
+
+.fh5co-spacer-md {
+    height: 20px;
+}
+
+#fh5co-features {
+    padding: 1em 0;
+}
+
+.fh5co-feature .fh5co-feature-text {
+    width: 70%;
+}
+
+#fh5co-clients {
+    background: #FBB040;
+}

@@ -1,35 +1,36 @@
+
 <?php 
 
 require("conexao.php");
 
-if(isset($_POST['Enviar'])){
+if(isset($_POST['Cadastrar'])){
 
 $nome = $_POST['nome'];
-$pass = $_POST['pass'];
+$sobrenome = $_POST['sobrenome'];
+$pais = $_POST['pais'];
+$cidade = $_POST['cidade'];
+$bairro = $_POST['bairro'];
+$cpf = $_POST['cpf'];
+$datanascimento = $_POST['datanascimento'];
+$telefone = $_POST['telefone'];
 $email = $_POST['email'];
+$senha = $_POST['senha']; 
 
-$end1 = $_POST['rua'];
-$end2 = $_POST['bairro'];
-$end3 = $_POST['cep1'];
-$end4 = $_POST['cep2'];
-
-$end = $end1."-".$end2."-".$end3.".".$end4;
-
-$passC = md5(base64_encode($pass));
-
-$sql = "INSERT INTO tbclientes (nome,email, senha, endereco) VALUES ('$nome', '$email', '$passC', '$end')";
+$sql = "INSERT INTO tbcliente (nome, sobrenome, senha, email, cidade, bairro, cpf, telefone, datanascimento, pais) VALUES ('".$nome."', '".$sobrenome."', '".$senha."', '".$email."', '".$cidade."', '".$bairro."', '".$cpf."', '".$telefone."', '".$datanascimento."', '".$pais."')";
 
 $query = mysqli_query($con, $sql);
 if($query){
-	echo "<script>alert('Usuário Cadastrado!')</script>";
+  echo "<script>alert('Usuário Cadastrado!')</script>";
+  header("location:login.php");
 }else{
-	echo "<script>alert('Usuário não Cadastrado!')</script>";
+  echo "<script>alert('Usuário não Cadastrado!')</script>";
 }
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -37,7 +38,7 @@ if($query){
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/csss.css">
-  <link rel="stylesheet" type="text/css" href="css/cs.css>
+  <link rel="stylesheet" type="text/css" href="css/cs.css">
   <script src="https://use.fontawesome.com/bc520d82be.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="js/modernizr-2.6.2.min.js"></script>
@@ -46,8 +47,6 @@ if($query){
 
     <title>Cadrasto</title>
 </head>
-
-
 <boby class="container">
 <header>
       <nav class="navbar navbar-default" role="navigation">
@@ -104,7 +103,7 @@ if($query){
                     <li>
                       <a href="#"><span style="color: #ff9900">
                         <i class="glyphicon glyphicon-earphone"></i>
-                         </span> (88) 9940-7250   (21) 7819-0645</a>
+                         </span> (88) 9940-7250   (88) 0800-000</a>
                     </li>
 
                     <li>
@@ -126,7 +125,7 @@ if($query){
     <p></p>
 
     <div>
-      <form id="formCadastro" name="formCadastro" class="formulario validate nice custom" method="post" action="https://www.rentcars.com/pt-br/cliente/cadastro">
+      <form id="formCadastro" name="formCadastro" class="formulario validate nice custom" method="post">
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -135,174 +134,108 @@ if($query){
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+
+     <div class="col-xs-5 elVal">
         <div class="form-group">
-           <div class="form-inline form-group-gender">
-
-                <label class="radio-inline radio-first-label" for="Tratamento"><span class="req">*</span> Tratamento:</label><br>
-                <label class="radio-inline radio-gender-label"><input type="radio" name="Tratamento" value="M"> Sr.</label>
-                <label class="radio-inline radio-gender-label"><input type="radio" name="Tratamento" value="F"> Sra.</label>
-                <label for="Tratamento" class="error" style="display:none;">Please choose one.</label>
-            </div>
-        </div>
-      </div>
-
-     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 elVal">
-        <div class="form-group">
-
           <label for="Nome"><span class="req">*</span> Nome:</label>
-            <input type="text" name="Nome" placeholder="Nome" id="Nome" class="input-text expand form-control"/>
+            <input type="text" name="nome" placeholder="Nome" id="Nome" class="input-text expand form-control"/>
         </div>
      </div>
 
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 elVal">
+    <div class="col-xs-5 elVal">
       <div class="form-group">
-
 		  <label for="Sobrenome"><span class="req">*</span> Sobrenome:</label>
-             <input type="text" name="Sobrenome" placeholder="Sobrenome" id="Sobrenome" class="input-text expand form-control"/>
+             <input type="text" name="sobrenome" placeholder="Sobrenome" id="sobrenome" class="input-text expand form-control"/>
        </div>
     </div>
 </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 elVal">
-         <div class="form-group">
-
-            <label for="PaisResidencia"><span class="req">*</span> Pais de Residência:</label>
-
-    <div class="control-value" id="raw-CodigoPaisNacionalidade">
-      <div class="hide-field">
-
-            <select disabled="true" name="PaisResidencia" id="PaisResidencia" class="form-control">
-                <option value="">Selecione...</option>
-                <option value="brasil" selected="selected">Brasil</option>     
-            </select>
+ <div class="row">
+            <div class="col-xs-5 elVal">
+                <div class="form-group">
+                    <label for="pais"><span class="req">*</span> Pais:</label>
+                    <input name="pais" type="text" id="pais" class="input-text expand form-control" placeholder="Brasil" />
+                <div id="hint"></div>
+            </div>
         </div>
-     </div>
-  </div>
-</div>
-
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 elVal">
+    <div class="col-xs-5 elVal">
         <div class="form-group">
-
-          <label for="CodigoPaisNacionalidade"><span class="req">*</span> Nacionalidade:</label>
-            <select name="CodigoPais" id="CodigoPaisNacionalidade" class="input-text medium form-control"/>
-                <option value="">Selecione</option>
-	            <option>Ceara- Ce</option>
-	            <option>Rio Grande do Norte - RN</option>
-            </select>
+          <label><span class="req">*</span>Cidade: </label>
+            <input type="text" name="cidade" id="cidade" class="input-text expand form-control" maxlength="30" placeholder="Fortaleza" />
          </div>
     </div>
 </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 elVal">
+ 
+<div class="row">
+ <div class="col-xs-5 elVal">
+        <div class="form-group">
+          <label><span class="req">*</span>Bairro: </label>
+            <input type="text" name="bairro" id="bairro" class="input-text expand form-control" maxlength="44" placeholder="Seu Bairro"//>
+         </div>
+    </div>
+<div class="col-xs-5 elVal">
           <div class="form-group">
-              <label for="TipoDocumento"><span class="req">*</span> Tipo do Documento:</label>
-                  <select name="TipoDocumento" id="TipoDocumento" class="form-control">
-                     <option value="">Selecione...</option>
-                     <option value="CPF">CPF</option>
-                     <option value="Identidade">Identidade</option>
-                     <option value="CNH">CNH</option>
-                  </select>
-           </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 elVal">
-          <div class="form-group">
-            <label for="Documento"><span class="req">*</span> Número do Documento:</label>
-                <input type="text" name="Documento" id="Documento" class="input-text expand form-control" maxlength="14"/>
+            <label for="Documento"><span class="req">*</span> CPF:</label>
+                <input type="text" name="cpf" id="cpf" class="input-text expand form-control" maxlength="14"/>
           </div>
         </div>
     </div>
 
      <div class="row">
-        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 elVal">
-           <div class="form-group">
+        <div class="col-xs-5 elVal form-group">
               <label for="DataNascimento"><span class="req">*</span> Data de Nascimento:</label>
-                <input type="text" style="background-color: #fff;" name="DataNascimento" id="DataNascimento" class="input-text expand form-control" placeholder="DD/MM/AAAA"/>
+                <input type="text" style="background-color: #fff;" name="datanascimento" id="datanascimento" class="input-text expand form-control" placeholder="DD/MM/AAAA"/>
+            </div>
+        <div class="col-xs-5 elVal form-group">
+               
+                   <label for="Celular" class="cursor-help" rel="tooltip" title="Certifique-se de preencher corretamente seu número de celular: Digite apenas números, sem pontos ou traços e não se esqueça de incluir seu DDD. Caso ocorra algum imprevisto com sua reserva, entraremos em contato."><span class="req">*</span> Celular: <span class="fa fa-info-circle"></span></label>
+                      <input type="tel" class="form-control intl-phone custom-placeholder" placeholder="" name="telefone" id="telefone" maxlength="24">
+                </div>
+      <div class="row">
+        <div class="col-xs-12 form-group-celular-advice">
+            <span class="advice-form"><em id="CelularCustomPlaceHolder"></em></span>
+        </div>
+       
+      </div>
+
+            <div class="col-xs-5 elVal">
+                <div class="form-group">
+                    <label for="email"><span class="req">*</span> E-mail:</label>
+                    <input name="email" type="text" id="email" class="input-text expand form-control" placeholder="seuemail@gmail.com" />
+                <div id="hint"></div>
             </div>
         </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 elVal">
-          <div class="form-group">
-                <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 form-group-celular">
-
-                   <label for="Celular" class="cursor-help" rel="tooltip" title="Certifique-se de preencher corretamente seu número de celular: Digite apenas números, sem pontos ou traços e não se esqueça de incluir seu DDD. Caso ocorra algum imprevisto com sua reserva, entraremos em contato."><span class="req">*</span> Celular: <span class="fa fa-info-circle"></span></label>
-
-                      <input type="tel" class="form-control intl-phone custom-placeholder" placeholder="" name="Celular" id="Celular" maxlength="24">
-                </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group-celular-advice">
-            <span class="advice-form"><em id="CelularCustomPlaceHolder"></em></span>
-             </div>
-        </div>
+      <div class="col-xs-5 elVal">
+         <div class="form-group">
+            <span class="req">*</span> Senha: <span class="fa fa-info-circle"></span></label>
+                <input autocomplete="off" name="senha" type="password" id="senha" class="input-text expand form-control" placeholder="********">
+         </div>
       </div>
   </div>
-</div>
 
+<div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group-celular-advice">
           <span class="advice-form"><em id="CelularCustomPlaceHolder"></em></span>
         </div>
       </div>
-    </div>
+  
 </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-           <h4>Dados de acesso à AutorCard.com</h4>
-        </div>
-    </div>
-
-    <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 elVal">
-                <div class="form-group">
-                    <label for="Email"><span class="req">*</span> E-mail:</label>
-                    <input name="Email" type="text" id="Email" class="input-text expand form-control" value=""/>
-                <div id="hint"></div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 row">
+            <div class="form-group">
+                <input type="submit" name="Cadastrar" class="btn btn-primary large radius btn-block"><a href="login.php"></a>
             </div>
         </div>
 
-     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 elVal">
-       <div class="form-group">
-         <label for="ConfirmarEmail"><span class="req">*</span> Confirme seu E-mail:</label>
-           <input name="ConfirmarEmail" type="text" id="ConfirmarEmail" class="input-text expand form-control"/>
-       </div>
-     </div>
- </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 elVal">
-         <div class="form-group">
-            <label for="Senha" rel="tooltip" class="cursor-help" title="Crie uma senha individual para acessar o site Rentcars.com e conferir suas reservas. A nova senha deve conter 6 a 8 caracteres."><span class="req">*</span> Crie uma Senha de Acesso: <span class="fa fa-info-circle"></span></label>
-                <input autocomplete="off" name="Senha" type="password" id="Senha" class="input-text expand form-control " maxlength="8" />
-         </div>
-      </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 elVal">
-      <div class="form-group">
-          <label for="ConfirmarSenha"><span class="req">*</span> Confirme sua Senha de Acesso:</label>
-            <input autocomplete="off" name="ConfirmarSenha" type="password" id="ConfirmarSenha" class="input-text expand form-control" maxlength="8"/>
-      </div>
-    </div>
-  </div>
-
        <div class="row" style="margin-bottom:0;">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-5">
                 <div class="form-group">
                     <div class="checkbox-inline">
 
-                <input type="checkbox" name="Newsletter" id="Newsletter" value="1" checked/>
+                <input type="checkbox" name="notifi" id="notifi" value="1" checked/>
                 <label style="display:inline-block" for="Newsletter">Aceito receber todas as ofertas e promoções da AutorCard.com</label>
                     </div>
                 </div>
             </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group" style="margin-bottom:0;">
-                <input type="submit" name="Salvar" id="submitCadastro" class="button fa-info-circle large radius btn-block" value="Criar Conta"/>
-            </div>
-        </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <ul class="client-login-advantages">
@@ -314,7 +247,6 @@ if($query){
     </div>
 </form>
 </nav>
-
     <div id="loadingCadastro" class="mini-loading" style="display:none;">
         <h3>Validando cadastro, aguarde...</h3>
     </div>
