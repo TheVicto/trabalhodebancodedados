@@ -204,7 +204,7 @@ window.location = "carros.php";
                         echo "".$dados['marcacarro']."";
                         echo "</td>";
                         echo "<td>";
-                        echo "<img class='img-responsive' src='../img/carros/".$dados['fotocarro']."'/>";
+                        echo "<img class='img-responsive' width='100px' height='80px' src='../img/carros/".$dados['fotocarro']."'/>";
                         echo "</td>";
                         echo "<td>
                         <a class='btn btn-danger glyphicon glyphicon-trash'  href='carros.php?del=".$dados['idcarro']."'> Remover</a>
