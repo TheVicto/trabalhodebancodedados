@@ -1,4 +1,13 @@
 <html>
+    <?php
+session_start();
+if(isset($_SESSION['nome'])){
+    
+}else{
+    header("location:login.php"); 
+}
+
+?>
     
     <head>
         <title>Detalhes</title>
@@ -33,7 +42,6 @@
     <body></body>
 </html>
 <?php
-session_start();
 if(isset($_SESSION)){
     $carro = $_GET['id'];
     require 'conexao.php';
@@ -74,7 +82,7 @@ if(isset($_SESSION)){
                         echo "</td>";
                         //?sidcarro=".$dados['idcarro']."
                         echo "<td id='acao'>
-                        <a class='btn btn-primary glyphicon glyphicon-ok' href='tableloc.php'> Locar</a>
+                        <a class='btn btn-primary glyphicon glyphicon-ok' href='tableloc.php?id=".$carro."'> Locar</a>
                         </td>
                         ";
                         echo "</tr>";

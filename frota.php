@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(isset($_SESSION['nome'])){
+    
+}else{
+    header("location:login.php"); 
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,11 +55,6 @@
                       </a>
                     </li>
 
-                    <li>
-                      <a href="locacao.php">
-                        <span>Locação<span class="border"></span></span>
-                      </a>
-                    </li>
 
                     <li>
                       <a href="duvida.php">
@@ -69,13 +74,35 @@
                          </span> (88) 9940-7250   (21) 7819-0645</a>
                     </li>
 
-                    <li>
+                   
+<?php
+                  if($_SESSION['nome']){
+
+                       
+if(isset($_GET['Sair'])){
+    
+    if($_GET['Sair'] == 'sair'){
+
+  unset($_SESSION['nome']);
+  header('location:index.php');
+}}
+                    echo ' <li>
+                       <a href="conta.php"><span class="glyphicon glyphicon-user"></span>'.$_SESSION['nome'].'</a>
+                    </li>
+                      <li>
+                       <a href="?Sair=sair"><span class="glyphicon glyphicon-log-in"></span> Sair</a>
+                     </li>';
+                  }else{
+
+                    echo ' <li>
                        <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
                     </li>
-
-                    <li>
+                      <li>
                        <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                     </li>
+                     </li>';
+
+                  }
+                  ?>
                 </ul>
             </div>
         </div>
@@ -112,7 +139,7 @@ while($dados = mysqli_fetch_assoc($query)){
 	echo "<div class='col-md-4'>";
 		echo "<div id='produtos'>";
 			echo "<h4>".$dados['modelodocarro']."</h4>";
-			echo "<img class='img-responsive' src='img/".$dados['fotocarro'].".jpg'/>";
+			echo "<img class='img-responsive' src='img/carros/".$dados['fotocarro']."'/>";
 			echo "<h4>".$dados['marcacarro']."</h4>";
 			echo "<a  class='btn' href='detalhes.php?id=".$dados['idcarro']."'>+ Detalhes</a>";
 		echo "</div>";
@@ -167,7 +194,6 @@ echo "</div>";
                         <li><a href="index.php#empresa">Empresa</a></li>
                         <li><a href="index.php#servico">Serviços</a></li>
                         <li><a href="index.php#frota">Frota</a></li>
-                        <li><a href="locacao.php">Locação</a></li>
                         <li><a href="duvida.php">Principais Dúvidas</a></li>
                         <li><a href="contato.php">Fale Conosco</a></li>
                     </ul>

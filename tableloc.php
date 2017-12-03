@@ -1,4 +1,13 @@
+<?php
+session_start();
+require 'conexao.php';
+if(isset($_SESSION['nome'])){
+    
+}else{
+    header("location:login.php"); 
+}
 
+?>
 <!DOCTYPE>
 <html>
 
@@ -92,182 +101,224 @@
     </nav>
 </header>
 <boby class="row">
-<nav class="navbar navbar-default" role="navigation" style="width: 850px; height: 800px; margin-left: 20%">   
-	<div class="box_s_reg">
-    	<h2 class="line_title marginTop0">Faça sua Locação</h2>
-    <p></p>
-</div>
-    <div>
+    
+<nav class="navbar navbar-default" role="navigation" style="width: 850px; padding: 30px; height: 400px; margin-left: 20%">   
+    
       
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h4>Preencha os Dados</h4>
+        <h2>Preencha os Dados</h2>
       </div>
     </div>
+    
+<!-- formulario de locacão -->
+<form id="formCadastro" name="formCadastro" class="formulario validate nice custom" method="post">
+<?php
+// verificação sucesso em cadastrar carro
+if (isset($_GET['var'])){
+$id = $_GET['var'];
+}	if (isset($id)) {
+if ($id == "certo") {
+        echo "<div class='alert alert-success'>
+<a class='close' data-dismiss='alert' href='#'>×</a>Carro Alugado com sucesso!
+</div>";
+        echo'<script>  setTimeout(function(){
+window.location = "index.php";
+}, 3500);
+</script>';
+}}
+// fim da verificação sucesso em cadastrar carro
 
-    <form id="formCadastro" name="formCadastro" class="formulario validate nice custom" method="post">
+//verificação erro em cadastrar carro
+if (isset($_GET['er'])){
 
+    $er = $_GET['er'];
+}	if (isset($er)) {
+if ($er == "erro") {
+        echo "<div class='alert alert-danger'>
+<a class='close' data-dismiss='alert' href='frota.php'.$id.''>×</a>Carro já Alugado!
+</div>";
+         echo'<script>  setTimeout(function(){
+window.location = "frota.php";
+}, 3500);
+</script>';         
+}}
+// fim a verificação sucesso em cadastrar carro
+
+// verificação incorrespondencia de data
+if (isset($_GET['data'])){
+
+    $data = $_GET['data'];
+}	
+if (isset($data)) {
+if ($data == "erro") {
+    if (isset($_GET['id'])){
+$carro = $_GET['id'];}
+        echo "<div class='alert alert-danger'>
+<a class='close' data-dismiss='alert' href='tableloc.php?id=".$carro."'>×</a>Incorrespondencia de data!
+</div>";
+         echo'
+             <script>
+window.location = tableloc.php?id='.$carro.';
+
+</script>';         
+}}
+// fim da verificação incorrespondencia de data
+?>
+<!-- primeiro rom -->
     <div class="row">
-     <div class="col-xs-5 elVal">
-        <div class="form-group">
-          <label for="Nome"><span class="req">*</span> Nome:</label>
-            <input type="text" name="nome" placeholder="Nome" id="nomecliente" class="input-text expand form-control"/>
-        </div>
-     </div>
-
-    <div class="col-xs-5 elVal">
-      <div class="form-group">
-		  <label for="Sobrenome"><span class="req">*</span> Sobrenome:</label>
-             <input type="text" name="sobrenome" placeholder="Sobrenome" id="sobrenome" class="input-text expand form-control"/>
-       </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-5 elVal">
-        <div class="form-group">
-          <label><span class="req">*</span>Cidade: </label>
-            <input type="text" name="cidade" id="cidade" class="input-text expand form-control" maxlength="30" placeholder="Fortaleza" />
-         </div>
-    </div> 
-<div class="col-xs-5 elVal">
-    <div class="form-group">
-      <label for="Documento"><span class="req">*</span> CPF:</label>
-         <input type="text" name="cpf" id="cpf" class="input-text expand form-control" maxlength="14" placeholder="000.000.000-00" />
-    </div>
-</div>
-</div>
-
-     <div class="row">
-        <div class="col-xs-5 elVal form-group">
-              <label for="DataNascimento"><span class="req">*</span> Data de Nascimento:</label>
-              <input type="date"  style="background-color: #fff;" name="datanascimento" id="datanascimento" class="input-text expand form-control" placeholder="AAAA/MM/DD"/>
-            </div>
-        <div class="col-xs-5 elVal form-group">
-               
-                   <label for="Celular" class="cursor-help" rel="tooltip" title="Certifique-se de preencher corretamente seu número de celular: Digite apenas números, sem pontos ou traços e não se esqueça de incluir seu DDD. Caso ocorra algum imprevisto com sua reserva, entraremos em contato."><span class="req">*</span> Telefone: <span class="fa fa-info-circle"></span></label>
-                      <input type="tel" class="form-control intl-phone custom-placeholder" placeholder="" name="telefone" id="telefone" maxlength="24" placeholder="(88)9.9999-9999">
-        </div>
-</div>
-      
-      <div class="row">
-        <div class="col-xs-5 form-group-celular-advice">
-            <span class="advice-form"><em id="CelularCustomPlaceHolder"></em></span>
-        </div>
-      </div>
-            <div class="col-xs-5 elVal">
-                <div class="form-group">
-                    <label for="email"><span class="req">*</span> E-mail:</label>
-                    <input name="email" type="text" id="email" class="input-text expand form-control" placeholder="seuemail@gmail.com" />
-                <div id="hint"></div>
-            </div>
-        </div>
-
-
-    <div class="row">
-      <div class="col-xs-5 elVal">
-         <div class="form-group">
-            <span class="req">*</span> Senha: <span class="fa fa-info-circle"></span></label>
-                <input autocomplete="off" name="senha" type="password" id="senha" class="input-text expand form-control" placeholder="********">
-       </div>
-     </div>
-   </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group-celular-advice">
-          <span class="advice-form"><em id="CelularCustomPlaceHolder"></em></span>
-        </div>
-      </div>
-
-<div class="row">
-      <div class="col-xs-5 elVal">
-         <div class="form-group">
-            <span class="req">*</span> Data da Locação <span class="fa fa-info-circle"></span></label>
-         <input autocomplete="off" maxlength="8" name="datalocacao" type="date" id="datalocacao" class="input-text expand form-control" placeholder="28/11/2017">
-         </div>
-      </div>
-
-<div class="col-xs-5 elVal">
-    <div class="form-group">
-       <span class="req">*</span> Data da Devolução <span class="fa fa-info-circle"></span></label>
-    <input autocomplete="off" name="datadevolucao" maxlength="8"type="date" id="datadevolucao" class="input-text expand form-control" placeholder="28/11/2017">
-         </div>
-      </div>
-  </div>
-
-
-<div class="row">
-      <div class="col-xs-5 elVal">
-         <div class="form-group">
-            <span class="req">*</span> Modelo do Veículo <span class="fa fa-info-circle"></span></label>
-                <input autocomplete="off" name="veiculo" type="text" id="modeloveiculo" class="input-text expand form-control" placeholder="Veículo">
-         </div>
-      </div>
-
-      <div class="col-xs-5 elVal">
-         <div class="form-group">
-            <span class="req">*</span> Placa <span class="fa fa-info-circle"></span></label>
-                <input autocomplete="off" name="placa" type="text" id="placa" class=" input-text expand form-control" placeholder="WWW-0000">
-         </div>
-      </div>
-  </div>
-  </div>
-
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 row">
+        
+        
+        <div class="col-xs-5 elVal" >
             <div class="form-group">
-                <input type="submit" name="Cadastrar" class="btn btn-primary large radius btn-block"><a href="reserva.php"></a>
+                <span class="req">*</span> Data da Locação <span class="fa fa-info-circle"></span></label>
+            <input autocomplete="off" maxlength="8" required name="data_loc" type="date" id="datalocacao" class="input-text expand form-control" placeholder="28/11/2017">
             </div>
         </div>
 
-
-       <div class="row" style="margin-bottom:0;">
-            <div class="col-xs-5">
-                <div class="form-group">
-                    <div class="checkbox-inline">
-
-                <input type="checkbox" name="notifi" id="notifi" value="1" checked/>
-                <label style="display:inline-block" for="Newsletter">Aceito receber todas as ofertas e promoções da AutorCard.com</label>
+        <div class="col-xs-5 elVal">
+            <div class="form-group">
+                <span class="req">*</span> Data da Devolução <span class="fa fa-info-circle"></span></label>
+                <input autocomplete="off"  required name="data_dev" maxlength="8"type="date" id="datadevolucao" class="input-text expand form-control" placeholder="28/11/2017">
+            </div>
+        </div>
+    <!-- fim do primeiro rom -->
+    </div>
+<!-- segundo rom -->
+    <div class="row">
+            <div class="col-xs-5 elVal">
+                    <div class="form-group">
+                            <span class="req">*</span> Modelo do Veículo <span class="fa fa-info-circle"></span></label>
+                         
+                             <?php
+                             if (isset($_GET['id'])){
+$carro = $_GET['id'];}
+                                $sql = "SELECT * FROM tbcarro WHERE idcarro = ".$carro."";
+                                $query = mysqli_query($con, $sql);
+                                while($dados = mysqli_fetch_assoc($query)){
+                                    echo "<input  name='modelo' disabled  value='".$dados['modelodocarro']."'>";
+                               }
+                               
+                             ?>
+                         
                     </div>
+            </div>
+
+            <div class="col-xs-5 elVal">
+                   
+                <span class="req" style="margin-top: 5px;">*</span> Placa <span class="fa fa-info-circle"></span><br>
+                                
+                               <?php
+                               if (isset($_GET['id'])){
+$carro = $_GET['id'];}
+                                $sql = "SELECT placa FROM tbcarro WHERE idcarro = ".$carro."";
+                                $query = mysqli_query($con, $sql);
+                                while($dados = mysqli_fetch_assoc($query)){
+                                    echo "<input name='placa' disabled   value='".$dados['placa']."'>";
+                               }
+                               ?>
+                               
+                     
+            </div>
+        <!-- fim do segundo rom-->
+    </div>
+
+
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 row">
+                <div class="form-group">
+                    <input type="submit" name="Enviar" class="btn btn-primary large radius btn-block"><a href="reserva.php"></a>
                 </div>
             </div>
-          </div>
+
+
+           <div class="row" style="margin-bottom:0;">
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        <div class="checkbox-inline">
+
+                    <input type="checkbox" name="notifi" id="notifi" value="1" checked/>
+                    <label style="display:inline-block" for="Newsletter">Aceito receber todas as ofertas e promoções da AutorCard.com</label>
+                        </div>
+                    </div>
+                </div>
+              </div>
+<!-- ***** FIM DO FORMULÁRIO DA LOCACÃO -->
 </form>
 
-
+</nav>
 </boby>
 </html>  
 
 <?php 
+$sql = "SELECT * FROM tbcarro WHERE idcarro = ".$carro."";
+                                $query = mysqli_query($con, $sql);
+                                while($dados = mysqli_fetch_assoc($query)){
+                           
+                                    
+if(isset($_POST['Enviar']))
+{   
 
-require("conexao.php");
+                                    
+    // variaveis do formulario
+    $nome = $_SESSION['nome'];
+    $data_loc = $_POST['data_loc'];
+    $data_dev = $_POST['data_dev'];
+    // end
+    if($data_loc < $data_dev){
+         $data = date_diff(date_create($data_dev), date_create($data_loc))->format('%d');
+                                      $dias = date_diff(date_create($data_dev), date_create($data_loc))->format('%d');
+                                 if($dados['classcarro'] == "A"){
+                                        $preco = 100+($dias*2);
+                                    }
+                                    elseif($dados['classcarro'] == "B"){
+                                        $preco = 100+($dias*1.80);
+                                    }elseif($dados['classcarro'] == "C"){
+                                        $preco = 100+($dias*1.60);
+                                    }else{
+                                        $preco = 100+($dias*1.40);
+                                    }
+         
+         
+         
 
-if(isset($_POST['Cadastrar'])){
+      $sql = "INSERT INTO locacao (nome,modelo,data_loc,data_dev,placa,preco) VALUES ('".$nome."','".$dados['modelodocarro']."','".$data_loc."','".$data_dev."','".$dados['placa']."','".$preco."')";
 
-$$fristname = $_POST['nome'];
-$leftname = $_POST['sobrenome'];
-$nome = $fristname." ".$leftname;
+        $query = mysqli_query($con, $sql);
+        if($query){
+if (isset($_GET['id'])){
+$carro = $_GET['id'];}
 
-$cpf = $_POST['cpf'];
-$datanascimento = $_POST['datanascimento'];
-$telefone = $_POST['telefone'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-$cidade = $_POST['cidade'];
-$cpf = $_POST['cpf'];
-$datalocacao = $_POST['datalocacao'];
-$datadevolucao = $_POST['datadevolucao'];
-$placa = $_POST['placa']; 
-$veiculo = $_POST['veiculo'];
+        echo '
+                <script>
+
+                                window.location = "tableloc.php?var=certo&&id='.$carro.'";
+
+                </script>';
+        }else{
+            if (isset($_GET['id'])){
+$carro = $_GET['id'];}
+        echo '
+                <script>
+                        
+                                window.location = "tableloc.php?er=erro&&id='.$carro.'";
+                        
+                </script>';
+        }
 
 
-$sql = "INSERT INTO tblocacao (nomecliente, datanascimento, cpf, telefone, cidade, email, senha, datalocacao, datadevolucao, modeloveiculo, placa ) VALUES ('".$nome.", '".$datanascimento."', '".$cpf."', '".$telefone."', '".$cidade."', '".$email."', '".$senha."', '".$datalocacao."', '".$datadevolucao."', '".$veiculo."', '".$placa."')";
-
-$query = mysqli_query($con, $sql);
-if($query){
-  echo "<script>alert('Locação Feita!')</script>";
-  header("location:reserva.php");
-}else{
-  echo "<script>alert('Locação Mal Realizada!')</script>";
-}
-}
+                                }else{
+                                    
+                    if (isset($_GET['id'])){
+                    $carro = $_GET['id'];}
+                          echo '
+                               
+                <script>
+                        
+                                window.location = "tableloc.php?data=erro&&id='.$carro.'";
+                        
+                </script>';
+                                }
+                                
+            }}
 ?>

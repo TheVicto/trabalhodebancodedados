@@ -63,11 +63,6 @@ if($_GET['Sair'] == 'sair'){
                       </a>
                     </li>
 
-                    <li>
-                      <a href="locacao.php">
-                        <span>Locação<span class="border"></span></span>
-                      </a>
-                    </li>
 
                     <li>
                       <a href="duvida.php">
@@ -91,7 +86,7 @@ if($_GET['Sair'] == 'sair'){
                   if($_SESSION['nome']){
 
                     echo ' <li>
-                       <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span>'.$_SESSION['nome'].'</a>
+                       <a href="conta.php"><span class="glyphicon glyphicon-user"></span>'.$_SESSION['nome'].'</a>
                     </li>
                       <li>
                        <a href="?Sair=sair"><span class="glyphicon glyphicon-log-in"></span> Sair</a>
@@ -254,7 +249,6 @@ if($_GET['Sair'] == 'sair'){
         <div class="fh5co-hero-wrap">
         <div class="fh5co-hero-intro text-center">
 
-              <a href="locacao.php" class="btn btn-danger">Tabela de preços de Locação de Veículos</a>
                 <a href="duvida.php" class="btn btn-primary">Dúvidas Frequentes</a>
            </div>
          </div>
@@ -347,7 +341,6 @@ if($_GET['Sair'] == 'sair'){
                         <li><a href="index.php#empresa">Empresa</a></li>
                         <li><a href="index.php#servico">Serviços</a></li>
                         <li><a href="index.php#frota">Frota</a></li>
-                        <li><a href="locacao.php">Locação</a></li>
                         <li><a href="duvida.php">Principais Dúvidas</a></li>
                         <li><a href="contato.php">Fale Conosco</a></li>
                     </ul>

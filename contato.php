@@ -43,16 +43,11 @@
                       </a>
                     </li>
                     <li>
-                      <a href="index.php#frota">
+                      <a href="frota.php">
                         <span>Frota<span class="border"></span></span>
                       </a>
                     </li>
 
-                    <li>
-                      <a href="locacao.php">
-                        <span>Locação<span class="border"></span></span>
-                      </a>
-                    </li>
 
                     <li>
                       <a href="duvida.php">
@@ -72,13 +67,35 @@
                          </span> (88) 9940-7250   (21) 7819-0645</a>
                     </li>
 
-                    <li>
+<?php
+session_start();
+
+                  if(isset($_SESSION['nome'])){
+                      
+if(isset($_GET['Sair'])){
+    
+    if($_GET['Sair'] == 'sair'){
+
+  unset($_SESSION['nome']);
+  header('location:index.php');
+}}
+                    echo ' <li>
+                       <a href="conta.php"><span class="glyphicon glyphicon-user"></span>'.$_SESSION['nome'].'</a>
+                    </li>
+                      <li>
+                       <a href="?Sair=sair"><span class="glyphicon glyphicon-log-in"></span> Sair</a>
+                     </li>';
+                  }else{
+
+                    echo ' <li>
                        <a href="cadrasto.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
                     </li>
-
-                    <li>
+                      <li>
                        <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                     </li>
+                     </li>';
+
+                  }
+                  ?>
                 </ul>
             </div>
         </div>
@@ -200,8 +217,7 @@
                         <li><a href="index.php">Página principal</a></li>
                         <li><a href="index.php#empresa">Empresa</a></li>
                         <li><a href="index.php#servico">Serviços</a></li>
-                        <li><a href="index.php#frota">Frota</a></li>
-                        <li><a href="locacao.php">Locação</a></li>
+                        <li><a href="frota.php">Frota</a></li>
                         <li><a href="duvida.php">Principais Dúvidas</a></li>
                         <li><a href="contato.php">Fale Conosco</a></li>
                     </ul>

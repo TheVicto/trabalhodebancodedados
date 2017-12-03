@@ -17,6 +17,8 @@ if(mysqli_num_rows($query) > 0)
 {
 	session_start();
 	$_SESSION['nome'] = $nome;
+        $_SESSION['email'] = $email;
+        
 	header('location:index.php');
 
 }

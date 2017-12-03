@@ -77,14 +77,8 @@ if($query){
                       </a>
                     </li>
                     <li>
-                      <a href="index.php#frota">
+                      <a href="frota.php">
                         <span>Frota<span class="border"></span></span>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="locacao.php">
-                        <span>Locação<span class="border"></span></span>
                       </a>
                     </li>
 
@@ -119,13 +113,13 @@ if($query){
     </nav>
 </header>
 
-<nav class="navbar navbar-default" role="navigation" style="width: 850px; height: 800px; margin-left: 20%">   
+<nav class="navbar navbar-default"  role="navigation" style="width: 850px; height: 800px; margin-left: 20%">   
 	<div class="box_s_reg">
     	<h2 class="line_title marginTop0">Crie sua Conta</h2>
     <p></p>
 
     <div>
-      <form id="formCadastro" name="formCadastro" class="formulario validate nice custom" method="post">
+        <form id="formCadastro" style="padding: 20px;"  name="formCadastro" class="formulario validate nice custom" method="post">
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

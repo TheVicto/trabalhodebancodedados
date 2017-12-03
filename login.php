@@ -51,7 +51,7 @@
 
           <div class="text-center">
             <a class="d-block small mt-3" href="cadrasto.php">Cadraste-se</a>
-            <a class="d-block small" href="admin/Alogin.php">Administrador</a>
+            <a class="d-block small" href="admin/login.php">Administrador</a>
           </div>
         </div>
       </div>
