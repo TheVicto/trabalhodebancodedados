@@ -139,7 +139,7 @@ while($dados = mysqli_fetch_assoc($query)){
 	echo "<div class='col-md-4'>";
 		echo "<div id='produtos'>";
 			echo "<h4>".$dados['modelodocarro']."</h4>";
-			echo "<img class='img-responsive' src='img/carros/".$dados['fotocarro']."'/>";
+			echo "<img class='img-responsive' src='img/carros/".$dados['fotocarro']."' style='width:48%; height:48%' />";
 			echo "<h4>".$dados['marcacarro']."</h4>";
 			echo "<a  class='btn' href='detalhes.php?id=".$dados['idcarro']."'>+ Detalhes</a>";
 		echo "</div>";
